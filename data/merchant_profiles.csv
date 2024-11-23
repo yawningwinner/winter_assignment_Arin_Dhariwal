@@ -1,0 +1,1001 @@
+MerchantID,Name,BusinessType,RegistrationDate,GSTStatus,AvgTransactionVolume
+M-00001,Hopkins Ltd,Services,2018-12-21,Not Registered,45296.98
+M-00002,Aguilar-Barker,Retail,2021-06-02,Registered,22139.35
+M-00003,"Green, Sandoval and Hancock",Services,2019-06-24,Not Registered,42489.14
+M-00004,Valdez-Haynes,Services,2023-07-02,Not Registered,46244.42
+M-00005,Carson-Lester,Wholesale,2024-08-14,Registered,7370.75
+M-00006,Bailey-Salas,Food & Beverage,2019-06-15,Registered,31979.21
+M-00007,"Pruitt, Harrell and Hodges",Retail,2018-03-01,Not Registered,18218.56
+M-00008,"George, Martinez and Nguyen",E-commerce,2024-08-14,Not Registered,7435.13
+M-00009,"Ramsey, Jimenez and Garza",Retail,2022-07-18,Registered,33528.28
+M-00010,Collins PLC,Food & Beverage,2024-01-15,Registered,3714.09
+M-00011,Johnston PLC,E-commerce,2023-11-22,Not Registered,47890.09
+M-00012,Lee Inc,Retail,2019-11-26,Registered,37871.66
+M-00013,"Stone, Gibson and Sanchez",Retail,2018-10-11,Registered,49021.72
+M-00014,Gates-Neal,Wholesale,2017-04-07,Not Registered,28006.02
+M-00015,"Mills, Morgan and Fox",Retail,2022-04-01,Not Registered,4323.0
+M-00016,Marks-Barker,Wholesale,2015-12-07,Not Registered,6273.7
+M-00017,"Cook, Davis and Carney",Retail,2022-07-02,Registered,6687.59
+M-00018,Jensen and Sons,E-commerce,2021-09-04,Not Registered,18890.61
+M-00019,Jordan-Waller,Retail,2020-02-15,Registered,47005.47
+M-00020,Reed-Pratt,Food & Beverage,2020-02-26,Registered,45530.06
+M-00021,Novak-Mckay,E-commerce,2016-02-05,Registered,41194.38
+M-00022,"Johnson, Meyers and Maldonado",E-commerce,2018-05-12,Not Registered,28516.53
+M-00023,"Davila, Smith and Delgado",Food & Beverage,2017-05-04,Registered,35114.41
+M-00024,Lindsey Ltd,E-commerce,2019-11-18,Registered,37092.04
+M-00025,Rosales Ltd,Services,2024-06-16,Registered,29730.98
+M-00026,Wallace-Holland,Retail,2020-09-27,Registered,17662.47
+M-00027,Coffey Group,Food & Beverage,2019-11-16,Not Registered,34410.22
+M-00028,Scott-Morrison,E-commerce,2019-09-24,Not Registered,19105.04
+M-00029,"Bryant, Sanchez and Miller",Food & Beverage,2017-07-24,Registered,27961.45
+M-00030,"Rose, Sanchez and Walker",Retail,2016-05-15,Not Registered,2922.36
+M-00031,Elliott and Sons,Food & Beverage,2016-10-23,Not Registered,13501.15
+M-00032,Jones-Solis,Retail,2015-05-08,Registered,10994.98
+M-00033,Baldwin Ltd,Services,2024-02-05,Registered,34797.9
+M-00034,Willis-Carter,Wholesale,2023-03-02,Registered,40944.06
+M-00035,"Taylor, Young and Ellis",Retail,2022-12-07,Registered,28552.14
+M-00036,Reynolds and Sons,Services,2016-05-03,Registered,47169.91
+M-00037,Mitchell-Reed,Services,2024-03-08,Not Registered,42574.03
+M-00038,Lee-Ramos,Services,2018-08-16,Not Registered,7933.4
+M-00039,"Houston, Padilla and Phelps",Wholesale,2016-12-07,Registered,36615.1
+M-00040,"Bryant, Smith and Valencia",Food & Beverage,2019-07-08,Not Registered,17023.66
+M-00041,Giles-Wong,E-commerce,2016-03-30,Not Registered,37840.94
+M-00042,Ross and Sons,Retail,2019-01-19,Not Registered,4949.52
+M-00043,King-Peters,Services,2020-01-04,Registered,17398.03
+M-00044,House-Smith,Retail,2022-03-08,Not Registered,19279.04
+M-00045,Robinson Inc,Services,2015-09-25,Not Registered,47456.7
+M-00046,"Thomas, Bradley and Lewis",Services,2022-12-07,Not Registered,1336.04
+M-00047,Soto Inc,Retail,2017-01-24,Registered,32472.22
+M-00048,"Hernandez, Bender and Nunez",Retail,2018-08-19,Registered,33439.84
+M-00049,Clark-Jordan,Retail,2018-05-02,Registered,13683.65
+M-00050,Mccarthy-Gutierrez,Services,2024-03-17,Not Registered,38606.39
+M-00051,Warren Group,Wholesale,2020-09-23,Registered,43455.78
+M-00052,Hunter-Newman,Services,2021-07-31,Not Registered,2847.58
+M-00053,Collins-Blake,Food & Beverage,2017-04-14,Registered,43225.1
+M-00054,"Mclaughlin, Nunez and Roberts",Food & Beverage,2021-01-28,Not Registered,23397.81
+M-00055,"Smith, Yang and Parker",Retail,2017-10-28,Registered,9806.39
+M-00056,Becker-Moreno,E-commerce,2018-06-13,Registered,29953.34
+M-00057,Woods Ltd,Food & Beverage,2020-11-21,Registered,42324.58
+M-00058,White-Schwartz,Retail,2016-11-06,Not Registered,23608.89
+M-00059,"Perry, Gibson and Ryan",Wholesale,2017-10-13,Registered,38290.62
+M-00060,Houston Group,E-commerce,2015-05-31,Not Registered,29755.59
+M-00061,"Mccarty, Robertson and White",Services,2015-04-20,Not Registered,49161.82
+M-00062,Gaines-Lee,Services,2018-09-29,Not Registered,1375.17
+M-00063,Phillips-Richards,E-commerce,2018-04-21,Registered,36610.66
+M-00064,"Williams, Martinez and Randall",E-commerce,2023-05-24,Not Registered,31008.09
+M-00065,"Meza, Martin and Vazquez",Wholesale,2019-08-19,Not Registered,41514.38
+M-00066,Hughes PLC,Retail,2019-02-05,Not Registered,16827.63
+M-00067,Castro LLC,Retail,2019-03-02,Registered,40932.7
+M-00068,Gonzales PLC,Food & Beverage,2017-09-14,Not Registered,43825.47
+M-00069,"Harvey, Bradford and Pacheco",Wholesale,2021-04-26,Registered,36568.26
+M-00070,"Torres, Davis and Lane",Retail,2017-06-14,Not Registered,44473.7
+M-00071,"Moore, Patterson and Stanley",E-commerce,2023-12-20,Not Registered,44305.1
+M-00072,Cain LLC,Food & Beverage,2023-08-28,Registered,19003.75
+M-00073,Anderson LLC,Services,2015-01-25,Not Registered,39020.15
+M-00074,"Holland, Novak and Williams",E-commerce,2017-01-26,Registered,32864.85
+M-00075,Cline-Pugh,E-commerce,2022-06-12,Not Registered,6085.34
+M-00076,"Sutton, Gonzales and Thompson",Services,2015-07-04,Not Registered,32387.26
+M-00077,Santana Group,Food & Beverage,2022-06-22,Not Registered,43529.13
+M-00078,Evans PLC,Wholesale,2015-04-13,Not Registered,34481.0
+M-00079,Cole Group,E-commerce,2020-10-02,Not Registered,2357.91
+M-00080,Brown and Sons,E-commerce,2023-01-05,Not Registered,20272.58
+M-00081,Hansen-Richardson,Wholesale,2021-05-20,Registered,18159.4
+M-00082,"Daugherty, Obrien and Ramos",Wholesale,2015-02-05,Registered,27469.8
+M-00083,Freeman Group,Wholesale,2017-12-10,Registered,15587.4
+M-00084,"Eaton, Valentine and Moore",Wholesale,2015-03-28,Not Registered,45586.15
+M-00085,"Hall, Mitchell and Rowe",Wholesale,2014-11-23,Registered,31834.83
+M-00086,Rangel-Jones,E-commerce,2019-05-21,Registered,48277.1
+M-00087,"Oliver, Vega and Conner",Services,2020-10-17,Not Registered,17127.56
+M-00088,Gray-James,Wholesale,2017-11-18,Not Registered,24126.53
+M-00089,"King, Garner and Anderson",Services,2021-08-08,Registered,48492.7
+M-00090,"Klein, Carter and Wolfe",Retail,2017-04-11,Registered,23533.2
+M-00091,"Herman, Schneider and Morton",Food & Beverage,2017-08-04,Not Registered,22409.71
+M-00092,"Evans, Davis and Cabrera",Services,2020-05-21,Not Registered,41248.77
+M-00093,Fry-Hicks,Wholesale,2022-06-29,Registered,38713.52
+M-00094,"Romero, Larson and Morton",E-commerce,2015-06-07,Registered,24129.47
+M-00095,Peterson-Pugh,Services,2024-06-07,Registered,49752.81
+M-00096,Ford-Cameron,E-commerce,2014-12-09,Registered,3731.51
+M-00097,"James, Lee and Ross",Food & Beverage,2015-02-23,Not Registered,4635.5
+M-00098,Rodriguez PLC,Food & Beverage,2021-03-23,Registered,35235.9
+M-00099,Mclaughlin-Mann,Wholesale,2020-06-26,Registered,27147.59
+M-00100,"Murillo, Hernandez and Schwartz",Wholesale,2018-06-27,Registered,38705.95
+M-00101,"Daniel, Brooks and Foster",Food & Beverage,2016-04-12,Not Registered,6002.54
+M-00102,"Baldwin, Vincent and Lopez",Food & Beverage,2020-12-24,Not Registered,17056.67
+M-00103,Quinn-Walter,Wholesale,2022-10-10,Not Registered,48068.14
+M-00104,Espinoza Inc,Services,2020-12-08,Not Registered,20471.7
+M-00105,"Walker, Gomez and White",Retail,2022-02-03,Not Registered,42667.98
+M-00106,"Sanders, Orr and King",Services,2018-05-07,Not Registered,46379.81
+M-00107,Bender LLC,Food & Beverage,2024-03-05,Not Registered,34405.36
+M-00108,Daniels-Allen,Wholesale,2015-10-20,Registered,21627.47
+M-00109,Jensen and Sons,Wholesale,2019-07-09,Not Registered,45767.09
+M-00110,Riley-Torres,E-commerce,2024-09-27,Registered,20507.43
+M-00111,Nguyen-Holmes,Services,2016-03-20,Registered,22769.2
+M-00112,"Martin, Nguyen and Wright",E-commerce,2019-07-27,Registered,38549.18
+M-00113,Rubio-Perry,Retail,2022-01-25,Not Registered,37054.59
+M-00114,Vega-King,E-commerce,2015-07-27,Registered,34909.96
+M-00115,"Fisher, Rodriguez and Carlson",Services,2021-03-17,Registered,11375.27
+M-00116,"Williams, Sims and Curry",Retail,2015-12-19,Not Registered,21723.97
+M-00117,Blankenship PLC,Services,2021-03-08,Registered,37495.74
+M-00118,"Valdez, Frederick and Ford",Services,2018-02-09,Registered,22082.16
+M-00119,Jackson-Jenkins,Retail,2015-06-11,Not Registered,30516.27
+M-00120,"Wilson, Cohen and Olson",Retail,2015-09-22,Not Registered,5938.7
+M-00121,Aguirre PLC,Services,2020-01-12,Not Registered,47080.09
+M-00122,Nelson Ltd,Food & Beverage,2023-09-29,Not Registered,43342.98
+M-00123,Garcia-Phillips,Food & Beverage,2020-07-23,Registered,24060.63
+M-00124,"King, Waters and Jackson",Wholesale,2018-05-13,Registered,19677.15
+M-00125,Williams LLC,Food & Beverage,2017-07-23,Not Registered,1012.99
+M-00126,Mitchell-Perry,Retail,2021-08-12,Registered,2975.93
+M-00127,"Martin, Nguyen and Clay",Retail,2019-08-23,Registered,46526.18
+M-00128,Edwards-Martin,Retail,2017-12-21,Registered,1396.58
+M-00129,"Miller, Fisher and Kelly",Retail,2018-10-19,Registered,28593.93
+M-00130,Parker-Hill,Retail,2022-09-13,Registered,34996.09
+M-00131,"Hayden, Dennis and Pena",Retail,2022-10-26,Registered,27160.12
+M-00132,Hutchinson Inc,Services,2023-06-27,Registered,27353.16
+M-00133,Eaton-Hale,Wholesale,2023-02-20,Registered,25292.79
+M-00134,Price Ltd,E-commerce,2018-12-10,Not Registered,23921.05
+M-00135,Oneill Group,Wholesale,2023-01-21,Registered,8812.73
+M-00136,Campbell-Martin,Wholesale,2019-11-26,Registered,45453.72
+M-00137,Robinson-Glover,Services,2020-10-27,Registered,37017.52
+M-00138,Perez-Brewer,Food & Beverage,2018-10-26,Not Registered,35700.02
+M-00139,"Aguirre, Johnson and Castillo",Wholesale,2020-12-22,Not Registered,9488.69
+M-00140,"Walker, Walker and Evans",Services,2015-08-05,Registered,49315.01
+M-00141,Nichols-Ryan,E-commerce,2021-06-05,Registered,24722.93
+M-00142,Webster Ltd,Services,2017-04-01,Not Registered,9646.69
+M-00143,Williams-Bryan,Wholesale,2022-04-07,Not Registered,30808.58
+M-00144,Shah-Murray,Retail,2024-01-14,Registered,16184.66
+M-00145,"Cole, Bishop and Sanchez",Food & Beverage,2018-06-22,Registered,45334.31
+M-00146,"Johnson, Williams and Ochoa",E-commerce,2018-12-02,Registered,23896.38
+M-00147,"Murphy, Gibson and Smith",Food & Beverage,2021-05-17,Registered,32177.2
+M-00148,Charles and Sons,E-commerce,2020-10-13,Registered,29816.76
+M-00149,"Thompson, Kelly and Mckenzie",Wholesale,2017-10-12,Registered,44664.17
+M-00150,Edwards Ltd,Retail,2022-10-23,Registered,8010.43
+M-00151,Carter-Bailey,Retail,2022-01-26,Registered,26623.57
+M-00152,"Lee, Barajas and Garza",Wholesale,2014-11-29,Registered,44833.41
+M-00153,Jackson-Smith,Retail,2019-05-29,Registered,48567.05
+M-00154,"Foster, Bates and Mack",Retail,2023-06-29,Not Registered,29420.55
+M-00155,"Moore, Wiggins and Weaver",Food & Beverage,2023-02-26,Not Registered,24152.14
+M-00156,Thompson LLC,Services,2023-12-15,Not Registered,2078.93
+M-00157,"Kennedy, Williams and Brooks",Wholesale,2015-12-05,Not Registered,38018.29
+M-00158,Clark-Gonzales,Wholesale,2022-01-19,Not Registered,32722.83
+M-00159,Ellis-Johnson,Services,2022-06-18,Not Registered,17162.71
+M-00160,"Wood, Briggs and Jackson",Retail,2022-09-30,Registered,30873.67
+M-00161,Patel and Sons,E-commerce,2016-05-14,Registered,47402.18
+M-00162,Garcia-Hart,Food & Beverage,2015-06-20,Not Registered,38764.32
+M-00163,Ramos Group,E-commerce,2021-05-27,Not Registered,22567.99
+M-00164,Evans-Butler,Retail,2019-11-04,Registered,16681.9
+M-00165,Rodriguez Ltd,Services,2022-10-11,Not Registered,6935.84
+M-00166,Hernandez Ltd,E-commerce,2016-10-02,Not Registered,12944.5
+M-00167,Rivera-Miller,Retail,2019-04-04,Registered,28652.82
+M-00168,Mcdonald-Pearson,E-commerce,2023-02-08,Not Registered,43541.84
+M-00169,"Arnold, Boyd and Harris",Wholesale,2019-07-28,Not Registered,18357.75
+M-00170,"Williams, Moore and Sparks",Services,2020-11-04,Registered,48822.32
+M-00171,Rivas Ltd,E-commerce,2019-06-15,Registered,19248.41
+M-00172,Dyer and Sons,E-commerce,2018-10-04,Registered,18080.25
+M-00173,"Williams, Hall and Hughes",Wholesale,2024-01-29,Not Registered,13255.56
+M-00174,Nelson-Lamb,Services,2017-06-02,Not Registered,16571.7
+M-00175,"Myers, Anderson and Horton",Wholesale,2015-06-14,Registered,45932.99
+M-00176,Taylor-Martinez,Services,2022-05-01,Not Registered,17035.76
+M-00177,Carlson-Krause,Retail,2023-06-03,Not Registered,20813.32
+M-00178,Malone PLC,Services,2018-04-04,Not Registered,45475.94
+M-00179,"Watkins, Kennedy and Quinn",Food & Beverage,2019-07-26,Registered,4592.77
+M-00180,"Hogan, Williams and George",Retail,2024-03-11,Registered,48813.2
+M-00181,Novak Inc,Food & Beverage,2023-11-15,Registered,2756.32
+M-00182,Smith and Sons,Services,2018-04-08,Registered,21018.22
+M-00183,"Norton, Ramirez and Andrews",E-commerce,2021-05-31,Not Registered,3960.68
+M-00184,"Peterson, Hopkins and Tran",Food & Beverage,2020-09-06,Registered,42646.86
+M-00185,"Kim, Edwards and Miller",Retail,2020-08-11,Registered,49058.07
+M-00186,White Group,E-commerce,2021-08-02,Not Registered,39312.46
+M-00187,Figueroa-Mccoy,E-commerce,2023-06-11,Not Registered,35689.13
+M-00188,"Reese, Soto and Jones",Services,2022-12-03,Registered,1713.25
+M-00189,Gomez-Nelson,Retail,2022-10-17,Not Registered,29429.96
+M-00190,"Wilson, Alvarez and Lucas",Retail,2019-06-06,Registered,21114.97
+M-00191,Nash-Pruitt,Retail,2017-01-22,Not Registered,21785.39
+M-00192,Clark LLC,E-commerce,2017-08-09,Not Registered,17895.74
+M-00193,Rodgers LLC,Food & Beverage,2024-01-06,Not Registered,9244.53
+M-00194,"Mueller, Anderson and Spence",E-commerce,2021-05-03,Registered,36116.55
+M-00195,"Rowe, Griffith and Green",Wholesale,2021-09-12,Not Registered,32645.92
+M-00196,Foster Ltd,Wholesale,2015-09-06,Not Registered,25892.82
+M-00197,Moore-Kim,Retail,2022-12-28,Not Registered,37439.94
+M-00198,Leblanc and Sons,Retail,2018-12-17,Registered,37153.45
+M-00199,"Knight, Bennett and Green",Retail,2019-06-08,Not Registered,32941.11
+M-00200,Ray Inc,Retail,2024-08-10,Registered,45328.2
+M-00201,Meyer-Martin,Retail,2023-05-08,Not Registered,4269.36
+M-00202,Hill Inc,Food & Beverage,2019-02-07,Not Registered,34582.36
+M-00203,Luna-Beck,E-commerce,2022-08-02,Not Registered,19910.58
+M-00204,Madden-Aguirre,E-commerce,2022-03-08,Registered,27683.2
+M-00205,Miller and Sons,Wholesale,2023-02-20,Not Registered,11671.53
+M-00206,"Russell, York and Vance",Wholesale,2017-02-15,Not Registered,19679.84
+M-00207,Harris LLC,Food & Beverage,2016-04-09,Not Registered,30432.01
+M-00208,Velazquez-Daniels,E-commerce,2018-06-15,Not Registered,23260.75
+M-00209,"Thompson, Smith and Miller",E-commerce,2024-05-15,Not Registered,39194.16
+M-00210,Gibson-Nielsen,Food & Beverage,2016-10-23,Not Registered,29252.26
+M-00211,"Hale, Jones and Colon",E-commerce,2018-11-21,Registered,19574.31
+M-00212,"Valenzuela, Peterson and Swanson",Food & Beverage,2015-09-08,Not Registered,46515.4
+M-00213,"Allen, Franklin and Baker",Services,2022-12-05,Registered,3256.29
+M-00214,"Watson, Wolfe and Gates",Services,2016-10-26,Not Registered,4483.51
+M-00215,Lutz-Crosby,E-commerce,2024-02-17,Not Registered,3235.16
+M-00216,Butler-Taylor,Retail,2019-12-07,Not Registered,22582.17
+M-00217,Joseph-Thompson,Services,2024-02-10,Not Registered,7165.76
+M-00218,Howard LLC,Wholesale,2020-08-18,Not Registered,47310.0
+M-00219,Esparza Inc,Food & Beverage,2018-06-04,Registered,33733.5
+M-00220,White-Boyd,Retail,2023-06-07,Registered,42236.81
+M-00221,"Murray, Brady and Cox",Retail,2014-11-24,Not Registered,1636.79
+M-00222,"Blackburn, Pham and Hill",Wholesale,2020-03-02,Not Registered,33333.02
+M-00223,"Nicholson, Burgess and Wilson",Services,2015-05-04,Not Registered,32384.47
+M-00224,Sanchez Inc,Food & Beverage,2024-05-24,Not Registered,17681.85
+M-00225,"Gonzalez, Miller and Baird",E-commerce,2018-10-12,Not Registered,33431.92
+M-00226,Chambers LLC,Food & Beverage,2016-03-16,Registered,26247.75
+M-00227,Adams LLC,E-commerce,2016-10-30,Not Registered,22065.16
+M-00228,"Dudley, Harrington and Briggs",E-commerce,2022-10-08,Not Registered,21371.33
+M-00229,Krause PLC,Food & Beverage,2015-07-22,Registered,31637.99
+M-00230,Smith-Duncan,E-commerce,2023-09-29,Registered,29735.74
+M-00231,"Mccoy, Hoffman and Brown",E-commerce,2022-10-29,Registered,46483.58
+M-00232,West-Thompson,Services,2017-11-29,Registered,22969.22
+M-00233,Donaldson and Sons,Wholesale,2023-12-04,Not Registered,42014.2
+M-00234,Savage-Matthews,Retail,2017-06-04,Not Registered,13160.0
+M-00235,Stevens Ltd,Retail,2019-08-09,Not Registered,9316.76
+M-00236,Campbell-Lewis,Wholesale,2021-01-14,Registered,24843.95
+M-00237,"Chung, Hall and Reyes",Services,2023-01-19,Registered,41426.73
+M-00238,"Preston, Lopez and Huffman",E-commerce,2022-06-12,Not Registered,48319.7
+M-00239,Novak-Moore,Food & Beverage,2023-06-25,Registered,12692.76
+M-00240,Vasquez LLC,Services,2023-02-09,Not Registered,10180.25
+M-00241,"Gomez, Freeman and Parker",Services,2021-01-07,Not Registered,14753.26
+M-00242,Ramos PLC,Services,2023-02-24,Registered,43931.6
+M-00243,"Fernandez, Martin and Hernandez",Wholesale,2022-02-18,Registered,30246.65
+M-00244,Fowler Inc,Food & Beverage,2024-10-08,Not Registered,49554.3
+M-00245,Williams Ltd,Food & Beverage,2024-03-09,Registered,15037.45
+M-00246,"Miller, Williams and Perez",Wholesale,2021-07-15,Registered,21119.38
+M-00247,Rodriguez Group,Services,2024-07-18,Not Registered,27665.77
+M-00248,"Berry, Bailey and Lewis",Services,2018-03-05,Not Registered,18958.26
+M-00249,Sawyer-Green,E-commerce,2018-02-04,Not Registered,1693.59
+M-00250,Mann-Smith,Food & Beverage,2024-11-21,Not Registered,15248.8
+M-00251,"Moon, Anderson and Haley",E-commerce,2024-01-11,Registered,2093.39
+M-00252,Aguirre LLC,Wholesale,2022-09-27,Registered,11888.87
+M-00253,Hansen Inc,Services,2021-08-26,Registered,13319.14
+M-00254,Richardson-Cuevas,Wholesale,2020-06-27,Not Registered,10487.19
+M-00255,Griffith PLC,E-commerce,2019-09-27,Not Registered,10283.0
+M-00256,Valdez Ltd,Food & Beverage,2023-02-25,Not Registered,40547.82
+M-00257,Baker-Mitchell,Services,2017-08-13,Not Registered,13047.25
+M-00258,"Butler, Sweeney and Espinoza",Services,2022-02-23,Not Registered,19246.63
+M-00259,Rice-Jones,Food & Beverage,2023-05-27,Registered,32421.99
+M-00260,Jenkins-Dunn,Wholesale,2016-07-22,Not Registered,43344.31
+M-00261,"Griffith, Prince and Fowler",Services,2024-09-19,Registered,34479.13
+M-00262,"Washington, Rivera and Avila",Services,2022-07-26,Not Registered,29028.92
+M-00263,Day Ltd,Retail,2016-10-18,Not Registered,1866.01
+M-00264,Pena Inc,Food & Beverage,2017-08-14,Registered,21288.14
+M-00265,"Hensley, Jackson and Miller",E-commerce,2019-12-04,Registered,13710.95
+M-00266,Rose Group,Wholesale,2019-04-20,Registered,35213.43
+M-00267,"Martinez, Taylor and Stevens",E-commerce,2018-02-07,Registered,37611.84
+M-00268,Cruz-Calhoun,Services,2016-11-08,Not Registered,48125.13
+M-00269,Jones-Nelson,Services,2020-11-08,Registered,3648.52
+M-00270,Baldwin Inc,E-commerce,2016-02-18,Not Registered,38496.66
+M-00271,"Elliott, Jones and Parker",Wholesale,2017-05-03,Not Registered,18205.04
+M-00272,Morgan Group,E-commerce,2016-07-13,Not Registered,13016.25
+M-00273,"Bryan, Booker and Dickerson",Services,2023-04-20,Registered,23262.73
+M-00274,"Martin, Williams and Hurst",E-commerce,2020-12-30,Not Registered,39914.51
+M-00275,Johnson-Frey,Food & Beverage,2024-08-07,Registered,44770.36
+M-00276,"Cook, Foster and Smith",E-commerce,2016-06-04,Registered,12872.71
+M-00277,Stone LLC,Wholesale,2020-02-02,Registered,44266.15
+M-00278,Jones Group,Services,2021-08-28,Registered,11081.77
+M-00279,"Austin, Kim and Roberts",Services,2022-02-09,Not Registered,22450.98
+M-00280,Key-Hamilton,Food & Beverage,2017-08-20,Registered,34896.9
+M-00281,Wagner and Sons,Wholesale,2015-10-18,Not Registered,29367.1
+M-00282,"Gray, Barnes and Smith",E-commerce,2017-04-07,Not Registered,4635.84
+M-00283,"Burgess, Mendez and Richards",Retail,2023-03-21,Not Registered,21474.93
+M-00284,"West, Diaz and Pineda",Services,2020-02-16,Not Registered,12868.18
+M-00285,"Gray, Welch and Burton",Food & Beverage,2016-10-26,Not Registered,30047.21
+M-00286,Henderson LLC,Services,2023-04-26,Not Registered,5712.29
+M-00287,Fisher-Williamson,Services,2019-06-13,Registered,16163.14
+M-00288,"Turner, Nicholson and Cook",Retail,2020-10-01,Not Registered,45919.59
+M-00289,Murray-Burke,Retail,2019-10-31,Not Registered,2515.28
+M-00290,Williamson Ltd,Services,2024-04-02,Registered,49366.91
+M-00291,Lyons-Mcclure,Wholesale,2014-12-08,Registered,28992.98
+M-00292,Choi and Sons,Wholesale,2022-12-21,Not Registered,32522.66
+M-00293,Finley PLC,Services,2024-06-15,Not Registered,29807.24
+M-00294,Cervantes and Sons,Services,2017-06-14,Registered,14311.43
+M-00295,"Robinson, Burton and Stevens",Food & Beverage,2018-09-03,Registered,40882.36
+M-00296,"Smith, Morse and Peters",Retail,2021-03-02,Registered,47797.73
+M-00297,"Pena, Alvarez and Boyd",Wholesale,2022-03-22,Registered,12546.89
+M-00298,"Phillips, Stewart and Vasquez",Food & Beverage,2016-02-02,Registered,25592.28
+M-00299,Smith-Moore,Retail,2015-07-23,Not Registered,37691.03
+M-00300,Williams Inc,Food & Beverage,2023-10-30,Registered,46252.89
+M-00301,"Jones, Howard and Jacobs",Wholesale,2018-05-13,Not Registered,31711.44
+M-00302,Mills Inc,E-commerce,2017-02-10,Registered,2223.5
+M-00303,"Munoz, Chang and Peterson",E-commerce,2021-03-28,Registered,2776.76
+M-00304,Velez Inc,Retail,2017-01-12,Registered,13332.26
+M-00305,"Gordon, Downs and Lopez",Food & Beverage,2023-12-25,Not Registered,5464.06
+M-00306,Gonzalez-Kane,Services,2023-09-25,Not Registered,40463.53
+M-00307,Campbell-Cooper,Food & Beverage,2021-02-22,Not Registered,35017.74
+M-00308,Watts-Martin,Services,2019-11-06,Registered,48556.01
+M-00309,Edwards-Wagner,Food & Beverage,2016-06-26,Not Registered,32643.01
+M-00310,Arnold PLC,Wholesale,2023-03-26,Not Registered,24582.09
+M-00311,"Coleman, Orr and Hanna",Food & Beverage,2020-03-16,Not Registered,4047.95
+M-00312,Jones LLC,Services,2017-04-05,Not Registered,28154.37
+M-00313,"Alvarez, Bauer and Gutierrez",Retail,2021-09-05,Not Registered,44083.16
+M-00314,Gentry-Adams,Retail,2023-03-26,Not Registered,17947.05
+M-00315,Stephenson-Rocha,Food & Beverage,2020-10-01,Registered,43974.37
+M-00316,"Bell, Phillips and Burke",Food & Beverage,2024-11-03,Not Registered,18588.15
+M-00317,"Davis, Miller and Joseph",Services,2024-02-17,Registered,3145.89
+M-00318,"Butler, Smith and Tucker",Food & Beverage,2016-09-01,Registered,9862.75
+M-00319,"Gardner, Ramos and Baker",Services,2015-07-21,Registered,30315.7
+M-00320,King LLC,E-commerce,2014-12-06,Not Registered,38991.59
+M-00321,Rollins-Holt,Retail,2016-05-13,Not Registered,19732.95
+M-00322,"Stephens, Hill and Fleming",E-commerce,2024-06-20,Registered,36946.01
+M-00323,Stephens-Franklin,E-commerce,2018-09-21,Registered,29171.64
+M-00324,Johnston Inc,Services,2023-02-20,Registered,37856.89
+M-00325,"Garcia, Obrien and Simpson",Retail,2022-02-28,Not Registered,27196.74
+M-00326,"Thompson, Dorsey and Olsen",Wholesale,2024-08-02,Not Registered,31253.52
+M-00327,Cummings-Lyons,E-commerce,2022-04-24,Not Registered,20969.43
+M-00328,Hammond and Sons,E-commerce,2021-06-19,Registered,44292.62
+M-00329,"Rosales, Taylor and Hicks",Services,2018-09-21,Registered,46997.12
+M-00330,Atkinson-Lee,Wholesale,2021-05-17,Registered,31461.19
+M-00331,Powell-Brown,Wholesale,2017-07-29,Registered,37073.36
+M-00332,Rivera-Patterson,Retail,2021-06-14,Not Registered,10229.27
+M-00333,"Ryan, Blair and Robles",Wholesale,2020-03-22,Registered,17129.8
+M-00334,Leonard-Miller,Services,2017-07-15,Not Registered,29479.49
+M-00335,Sheppard Inc,E-commerce,2019-04-20,Registered,42644.06
+M-00336,Washington-Wilson,Food & Beverage,2019-12-20,Registered,22117.62
+M-00337,"Hall, Rice and Gonzales",Food & Beverage,2015-08-11,Registered,28958.21
+M-00338,"Reed, Johnson and Garcia",Services,2015-01-20,Not Registered,33592.09
+M-00339,Robinson Group,E-commerce,2017-11-06,Registered,18597.53
+M-00340,Anderson-Brown,Services,2016-10-28,Registered,18623.07
+M-00341,Marshall PLC,Retail,2015-07-02,Registered,42567.06
+M-00342,Gibson-Kelly,Wholesale,2024-10-01,Not Registered,48825.19
+M-00343,"Cook, Harris and Garcia",Wholesale,2021-12-21,Registered,12075.2
+M-00344,Cain-Johnston,Food & Beverage,2015-09-28,Not Registered,29335.68
+M-00345,Garcia and Sons,Food & Beverage,2024-05-24,Not Registered,25276.81
+M-00346,"Mendoza, Rios and Sullivan",Services,2023-04-28,Registered,21366.38
+M-00347,"Hoffman, Beck and Guerra",E-commerce,2015-11-18,Registered,26849.1
+M-00348,"Mitchell, Glover and Moody",Services,2024-02-16,Registered,3543.11
+M-00349,"Smith, Smith and Young",E-commerce,2017-02-17,Registered,24071.6
+M-00350,Thompson LLC,Services,2021-11-14,Not Registered,15675.67
+M-00351,"Young, Lara and Smith",Wholesale,2023-01-16,Registered,23038.4
+M-00352,"Webster, Wilson and Fowler",Retail,2020-06-12,Registered,7480.1
+M-00353,Long and Sons,Food & Beverage,2022-03-04,Not Registered,12471.37
+M-00354,"Moore, Nguyen and Graves",Wholesale,2015-10-05,Registered,6400.1
+M-00355,Macdonald-Mason,Retail,2019-02-22,Not Registered,27593.06
+M-00356,Peters Inc,Retail,2019-01-11,Not Registered,28692.31
+M-00357,Stone-Velez,Wholesale,2022-02-25,Not Registered,42633.84
+M-00358,Hart and Sons,Services,2021-06-30,Registered,17180.9
+M-00359,Martin-Shelton,Services,2017-06-25,Not Registered,2874.15
+M-00360,"Grant, Shea and Daniels",Services,2019-03-04,Not Registered,31486.57
+M-00361,Pugh Group,Retail,2018-11-17,Not Registered,36949.94
+M-00362,Ortega-Gay,Wholesale,2017-11-04,Not Registered,27240.41
+M-00363,Mills-Jefferson,E-commerce,2023-08-24,Registered,37421.09
+M-00364,"Griffith, Jones and Willis",Food & Beverage,2018-05-25,Not Registered,24979.01
+M-00365,Sanders and Sons,Services,2024-11-17,Not Registered,3576.14
+M-00366,Castillo-Jordan,Retail,2024-02-18,Registered,18260.67
+M-00367,"Spears, Sheppard and Baker",Services,2018-10-06,Registered,12502.3
+M-00368,Chaney-Suarez,Services,2023-04-30,Registered,32938.13
+M-00369,Stevens Inc,Services,2015-04-24,Not Registered,34258.06
+M-00370,"Garner, Martin and Taylor",Wholesale,2018-08-04,Not Registered,34102.8
+M-00371,Pearson LLC,Services,2017-03-11,Registered,12344.86
+M-00372,"Rodriguez, Harris and Hoffman",Retail,2017-05-19,Not Registered,28458.9
+M-00373,Reeves-Cole,Services,2020-03-15,Not Registered,46737.12
+M-00374,"Morgan, Best and Chandler",Services,2021-01-19,Registered,20221.54
+M-00375,Boyd LLC,Food & Beverage,2023-01-13,Not Registered,37389.06
+M-00376,"Martinez, Lawson and Sanchez",E-commerce,2023-11-23,Registered,30618.02
+M-00377,Sullivan-Santiago,Retail,2018-07-18,Not Registered,12135.43
+M-00378,"Church, Hamilton and Reyes",E-commerce,2016-01-07,Registered,12544.33
+M-00379,Howard-Faulkner,E-commerce,2022-05-10,Not Registered,30323.49
+M-00380,"Johnson, Lynn and Hines",Retail,2015-02-20,Not Registered,46266.16
+M-00381,Evans-Goodman,Wholesale,2024-06-14,Registered,42037.2
+M-00382,Green-Cantrell,E-commerce,2020-03-12,Not Registered,37173.4
+M-00383,"Shea, Scott and Friedman",E-commerce,2024-07-07,Registered,1865.16
+M-00384,Nunez-Rodriguez,E-commerce,2023-06-10,Registered,20870.08
+M-00385,Price Group,Wholesale,2019-08-25,Registered,19793.06
+M-00386,"Cole, Jones and Henderson",E-commerce,2017-03-04,Not Registered,31955.63
+M-00387,Craig Group,Retail,2024-11-05,Not Registered,35723.35
+M-00388,"Kramer, Gardner and Foster",Food & Beverage,2017-09-27,Not Registered,32745.91
+M-00389,Torres Ltd,Food & Beverage,2015-08-07,Not Registered,49017.85
+M-00390,"Morgan, Johnson and Pratt",E-commerce,2021-09-25,Not Registered,43930.76
+M-00391,Williams-Schultz,Services,2017-09-12,Not Registered,47420.85
+M-00392,Franco PLC,Retail,2015-07-18,Not Registered,19828.48
+M-00393,Sanders-Steele,Wholesale,2024-04-02,Not Registered,7405.9
+M-00394,Roberts PLC,Wholesale,2020-08-18,Registered,39678.9
+M-00395,"Guerrero, Ortiz and Rich",Wholesale,2021-10-06,Registered,19802.87
+M-00396,"Smith, Love and Smith",Food & Beverage,2023-01-13,Not Registered,28423.42
+M-00397,"Wallace, Marshall and Smith",E-commerce,2024-09-24,Not Registered,12228.17
+M-00398,"Avila, Hernandez and Ingram",Food & Beverage,2015-06-28,Registered,4912.9
+M-00399,"Branch, Gomez and Williams",Food & Beverage,2020-12-26,Registered,5577.3
+M-00400,Thomas-Woods,Retail,2023-05-05,Registered,6074.28
+M-00401,Hodge Inc,Services,2016-05-15,Not Registered,48730.56
+M-00402,"Ellis, Shea and Perkins",Wholesale,2021-04-14,Not Registered,32377.06
+M-00403,Ramos and Sons,E-commerce,2022-01-18,Not Registered,39333.65
+M-00404,"Farrell, Payne and Ramirez",Services,2017-09-17,Not Registered,38492.92
+M-00405,Harris LLC,E-commerce,2020-01-26,Registered,18148.04
+M-00406,Henderson-Hodge,Wholesale,2023-08-28,Not Registered,46655.86
+M-00407,Brown-Thompson,Wholesale,2024-10-15,Not Registered,31795.75
+M-00408,Rios and Sons,Wholesale,2018-01-07,Not Registered,30048.16
+M-00409,Huang-Rosales,Services,2019-04-28,Not Registered,29144.67
+M-00410,"Garcia, Moore and Miller",Retail,2018-01-21,Registered,41023.97
+M-00411,Johnson-Warren,Food & Beverage,2017-09-02,Not Registered,13546.14
+M-00412,Novak-Lewis,Retail,2016-03-02,Registered,39368.55
+M-00413,Ward Group,Food & Beverage,2019-10-25,Registered,30338.84
+M-00414,Castaneda-Davis,Retail,2020-08-13,Registered,43319.56
+M-00415,"Brown, Terry and Hayes",Retail,2022-07-21,Registered,33278.95
+M-00416,Torres Ltd,Services,2023-11-14,Registered,47765.72
+M-00417,Higgins Ltd,E-commerce,2020-08-18,Not Registered,45267.16
+M-00418,Knox and Sons,Food & Beverage,2023-12-13,Not Registered,16254.34
+M-00419,"Acevedo, Brown and Perry",Food & Beverage,2021-06-04,Not Registered,45105.99
+M-00420,"Hughes, Wood and Fisher",Retail,2020-11-25,Registered,44687.07
+M-00421,Wilson Group,Retail,2018-05-30,Registered,30049.67
+M-00422,"Christensen, Gomez and Trujillo",Retail,2017-10-11,Not Registered,43510.53
+M-00423,Prince PLC,Food & Beverage,2024-06-26,Not Registered,41511.04
+M-00424,Cooley Inc,E-commerce,2015-12-19,Not Registered,38347.82
+M-00425,"Rhodes, Osborne and Miller",E-commerce,2023-04-26,Registered,28593.48
+M-00426,Anderson-Tyler,Retail,2015-04-20,Not Registered,9665.13
+M-00427,Cline-White,Wholesale,2018-08-07,Not Registered,25831.8
+M-00428,Peters-Williams,Services,2015-05-04,Not Registered,16633.4
+M-00429,Edwards and Sons,Retail,2020-10-02,Registered,16319.24
+M-00430,"Carroll, Powell and Villanueva",Wholesale,2020-04-02,Registered,48503.8
+M-00431,Page-Pennington,Retail,2017-02-20,Not Registered,1332.4
+M-00432,Kim-Ruiz,Retail,2016-07-10,Registered,13230.05
+M-00433,Sanchez Inc,Services,2020-08-22,Not Registered,13979.48
+M-00434,Diaz-Smith,Wholesale,2024-09-26,Registered,33572.12
+M-00435,Cunningham-Jordan,Wholesale,2017-03-02,Registered,38102.47
+M-00436,Wang Inc,E-commerce,2018-05-18,Not Registered,26206.54
+M-00437,Powell Inc,E-commerce,2015-11-06,Registered,24050.69
+M-00438,Edwards-Duncan,Retail,2020-06-23,Registered,21343.65
+M-00439,Robinson Ltd,Food & Beverage,2016-10-23,Not Registered,6161.0
+M-00440,"Warren, Cooke and Frederick",Services,2017-10-28,Not Registered,18278.19
+M-00441,Adkins-Gutierrez,Wholesale,2018-01-12,Not Registered,1904.3
+M-00442,Ferrell-Williams,Food & Beverage,2017-09-25,Registered,40243.11
+M-00443,Brown Ltd,Wholesale,2019-10-08,Registered,35108.87
+M-00444,"Charles, Hudson and Gibson",Services,2024-03-29,Not Registered,15131.01
+M-00445,Rush Ltd,Food & Beverage,2015-04-19,Not Registered,47668.4
+M-00446,English-Whitaker,Retail,2017-03-17,Not Registered,17821.36
+M-00447,Edwards LLC,E-commerce,2022-10-09,Registered,22737.63
+M-00448,Kim Ltd,Food & Beverage,2023-06-14,Not Registered,32879.9
+M-00449,Hunter-Rogers,Services,2020-01-08,Registered,37514.58
+M-00450,Harvey-Stein,Wholesale,2018-12-19,Registered,33743.47
+M-00451,Johnson PLC,Retail,2023-07-18,Not Registered,25000.89
+M-00452,"Burns, Carpenter and Howard",E-commerce,2020-09-23,Registered,1915.8
+M-00453,Coleman PLC,Food & Beverage,2014-11-24,Not Registered,14045.29
+M-00454,"Adams, Wise and Parker",Food & Beverage,2014-12-08,Not Registered,36714.74
+M-00455,"Conner, Murray and Smith",Food & Beverage,2015-08-07,Registered,28918.01
+M-00456,"Mueller, Jensen and Johnson",E-commerce,2019-07-26,Registered,33110.05
+M-00457,"Richardson, Rogers and Miller",Services,2019-06-24,Registered,15274.61
+M-00458,Roman Ltd,Retail,2023-04-18,Registered,28019.38
+M-00459,Soto Group,Food & Beverage,2024-06-17,Registered,45434.04
+M-00460,Lucero Group,Retail,2020-03-15,Not Registered,43645.94
+M-00461,Proctor-Flowers,E-commerce,2022-01-11,Not Registered,30760.87
+M-00462,Martinez Ltd,Food & Beverage,2019-11-10,Registered,6225.14
+M-00463,Love and Sons,Retail,2017-06-17,Registered,20727.17
+M-00464,"Scott, Hendricks and Pace",Retail,2024-02-26,Not Registered,24693.37
+M-00465,Ruiz PLC,Wholesale,2024-04-06,Not Registered,17087.31
+M-00466,Combs LLC,Services,2016-03-15,Registered,9900.4
+M-00467,"Green, Martinez and Morris",Wholesale,2015-01-19,Registered,23061.28
+M-00468,"Norman, Miller and Chaney",Wholesale,2020-12-15,Registered,28663.7
+M-00469,"Rios, Mendoza and Summers",E-commerce,2023-12-04,Not Registered,10230.66
+M-00470,Campbell Group,Services,2020-12-05,Registered,33006.07
+M-00471,Williams-Peterson,Wholesale,2019-09-06,Not Registered,44823.33
+M-00472,Woodard Group,Wholesale,2023-02-21,Registered,32212.4
+M-00473,"Banks, Williams and Johnson",Services,2015-12-20,Registered,48380.02
+M-00474,"Gardner, Hayes and Garcia",Retail,2021-07-28,Not Registered,37569.33
+M-00475,"Cooper, Delacruz and Pace",Services,2017-02-24,Registered,36864.22
+M-00476,Howard Ltd,Services,2015-04-07,Registered,2269.76
+M-00477,"Costa, Williams and Mckinney",Services,2023-03-20,Not Registered,16654.6
+M-00478,"Montoya, Valdez and Taylor",Retail,2017-01-05,Registered,2505.55
+M-00479,"Dunn, Silva and Snyder",Services,2020-05-19,Not Registered,38712.02
+M-00480,"Hall, Banks and Vance",Services,2015-04-23,Not Registered,5560.67
+M-00481,"Rhodes, Ramirez and Galloway",Wholesale,2018-08-31,Not Registered,20398.46
+M-00482,"Walsh, Fisher and Sims",Food & Beverage,2022-01-17,Not Registered,35408.84
+M-00483,"Payne, Parks and Thomas",E-commerce,2022-04-28,Registered,43479.98
+M-00484,Khan-Washington,Retail,2019-08-31,Registered,15073.26
+M-00485,"Baker, Hunt and Douglas",Food & Beverage,2022-04-03,Not Registered,1814.84
+M-00486,Higgins-Wells,Food & Beverage,2016-05-10,Registered,14599.31
+M-00487,Edwards and Sons,Retail,2021-02-03,Not Registered,47130.4
+M-00488,Salinas Ltd,Retail,2016-10-11,Not Registered,13524.9
+M-00489,Cohen-Arnold,Retail,2024-10-17,Not Registered,11482.09
+M-00490,Anderson-Williams,Wholesale,2022-07-02,Registered,28152.03
+M-00491,Harris-Santos,Wholesale,2018-12-20,Registered,1194.83
+M-00492,Lewis-Sharp,Food & Beverage,2019-10-09,Registered,11401.77
+M-00493,Douglas-Avery,E-commerce,2023-11-06,Not Registered,37183.96
+M-00494,Roberts and Sons,E-commerce,2023-06-09,Not Registered,31354.21
+M-00495,"Jones, Henderson and Johnson",E-commerce,2019-08-09,Not Registered,19116.56
+M-00496,Peck-Watson,Services,2019-07-18,Not Registered,30738.88
+M-00497,Walsh LLC,Food & Beverage,2020-09-05,Registered,41355.03
+M-00498,Bishop and Sons,Wholesale,2020-09-16,Not Registered,6340.05
+M-00499,Owens Inc,Wholesale,2020-06-23,Registered,46691.72
+M-00500,Wright Group,Food & Beverage,2024-01-13,Registered,37246.91
+M-00501,"Garcia, Mendoza and Pena",Services,2023-04-30,Not Registered,20086.47
+M-00502,Lewis Ltd,E-commerce,2020-02-17,Not Registered,2445.56
+M-00503,"Knox, Vazquez and Gonzalez",Services,2019-03-27,Registered,30988.03
+M-00504,"Dawson, Marshall and Murray",Wholesale,2021-11-10,Registered,7722.31
+M-00505,Barnes-Haley,Food & Beverage,2021-08-11,Registered,21411.69
+M-00506,Gates-Watts,Food & Beverage,2016-11-15,Not Registered,8657.28
+M-00507,"Baker, Brennan and Malone",Retail,2019-07-02,Registered,37918.64
+M-00508,Williams LLC,Services,2015-04-01,Not Registered,30816.92
+M-00509,"Thompson, Paul and Campbell",Wholesale,2021-01-22,Registered,13317.37
+M-00510,Collins-Everett,Food & Beverage,2022-08-16,Not Registered,5933.37
+M-00511,Winters Ltd,Food & Beverage,2020-11-06,Registered,35890.54
+M-00512,"Wallace, Gaines and Perez",E-commerce,2014-12-30,Registered,39540.75
+M-00513,"Hoffman, Brown and Meyer",Retail,2023-05-08,Registered,45857.8
+M-00514,Roberts-Glover,Food & Beverage,2023-10-14,Registered,31029.05
+M-00515,Parsons Group,Services,2019-05-12,Not Registered,18350.07
+M-00516,Anderson Group,Retail,2021-03-04,Registered,27914.34
+M-00517,Washington LLC,Services,2021-06-06,Not Registered,16610.83
+M-00518,"Perez, Kent and Burns",E-commerce,2017-12-21,Not Registered,28440.25
+M-00519,Mullins Group,Food & Beverage,2021-09-16,Registered,17588.44
+M-00520,"Madden, Baker and Barker",Wholesale,2022-08-15,Not Registered,43062.01
+M-00521,"Jenkins, Espinoza and Fowler",Services,2021-03-09,Registered,11992.42
+M-00522,"Lopez, Rivers and Garcia",Food & Beverage,2022-04-10,Registered,12798.07
+M-00523,Hernandez-Blanchard,Retail,2015-06-04,Not Registered,40078.84
+M-00524,Burton-Taylor,E-commerce,2017-08-24,Registered,37367.18
+M-00525,"Patrick, Carr and Scott",Services,2016-05-02,Registered,27382.91
+M-00526,Gonzales Group,Food & Beverage,2024-05-05,Registered,14248.96
+M-00527,Smith-Rose,Retail,2015-11-22,Registered,11538.69
+M-00528,"Perry, Graham and Solis",E-commerce,2023-09-15,Registered,49390.06
+M-00529,"Powell, Johnson and Smith",E-commerce,2021-01-06,Registered,23618.31
+M-00530,Jacobs-Ruiz,Wholesale,2022-10-28,Not Registered,19646.24
+M-00531,Barker-Cohen,Retail,2022-03-25,Registered,20530.77
+M-00532,Moore-Wells,Services,2018-10-23,Registered,26390.47
+M-00533,Carey-Barrera,Food & Beverage,2019-09-15,Not Registered,37653.4
+M-00534,Smith-Gates,E-commerce,2019-12-14,Not Registered,20163.92
+M-00535,Knapp Group,E-commerce,2023-09-10,Not Registered,2836.07
+M-00536,"Rodriguez, Bell and Robertson",Food & Beverage,2015-11-07,Not Registered,6427.5
+M-00537,"Johnson, Villarreal and Fisher",Retail,2016-06-05,Registered,32744.67
+M-00538,Adams and Sons,Services,2017-06-07,Registered,17408.9
+M-00539,Kelley-Oconnell,Food & Beverage,2023-10-11,Registered,22446.46
+M-00540,Woods Ltd,Food & Beverage,2016-10-22,Not Registered,5369.6
+M-00541,Graham-Allen,Services,2014-12-01,Not Registered,17438.75
+M-00542,Stewart-Wagner,E-commerce,2018-07-22,Not Registered,24077.62
+M-00543,Cameron-Hughes,Services,2018-10-25,Registered,10530.41
+M-00544,Brown-Graham,E-commerce,2017-03-31,Registered,25153.49
+M-00545,"Andrews, Herman and Villarreal",Retail,2016-04-06,Registered,49872.0
+M-00546,"Collins, Martinez and Smith",Food & Beverage,2021-06-09,Registered,18814.32
+M-00547,"Moody, Montes and Pitts",Services,2020-05-19,Not Registered,48730.25
+M-00548,Wilson Inc,Food & Beverage,2022-05-15,Registered,10265.64
+M-00549,Thomas PLC,Retail,2015-09-10,Registered,40402.4
+M-00550,Johnson-Washington,Retail,2024-04-11,Not Registered,36674.61
+M-00551,"Garcia, Mann and Barker",Retail,2018-12-03,Registered,17234.59
+M-00552,Singh and Sons,E-commerce,2018-09-19,Registered,19937.43
+M-00553,Scott LLC,Wholesale,2019-01-22,Registered,7210.81
+M-00554,Burnett Ltd,Wholesale,2018-03-30,Not Registered,28730.62
+M-00555,Hoffman-George,E-commerce,2019-08-22,Not Registered,20847.86
+M-00556,Jacobs-Phelps,Services,2020-09-07,Registered,39810.14
+M-00557,Flores PLC,Services,2024-06-09,Not Registered,35598.65
+M-00558,Clark Inc,Services,2017-09-19,Registered,47257.69
+M-00559,Jones-Thomas,Services,2019-12-04,Registered,12785.36
+M-00560,Kim and Sons,Retail,2015-01-22,Registered,17698.05
+M-00561,"Garcia, Trevino and Baker",Wholesale,2018-07-17,Registered,15035.52
+M-00562,"Schmidt, Brock and Warren",Services,2022-11-10,Registered,45355.27
+M-00563,Phillips LLC,Retail,2017-09-06,Not Registered,30216.48
+M-00564,Simmons-Burnett,Wholesale,2014-12-26,Registered,29370.93
+M-00565,Collins PLC,E-commerce,2022-01-03,Not Registered,18992.42
+M-00566,Johnson-Torres,Services,2020-09-30,Not Registered,37990.75
+M-00567,Bailey-Bentley,Wholesale,2021-09-08,Not Registered,9609.81
+M-00568,"Armstrong, Middleton and Watson",Wholesale,2019-12-20,Not Registered,23041.48
+M-00569,"Taylor, Vasquez and Kim",Retail,2018-06-06,Not Registered,19423.46
+M-00570,"Brown, Weaver and King",Services,2022-11-25,Not Registered,11439.71
+M-00571,Poole-Love,E-commerce,2014-12-09,Not Registered,17540.0
+M-00572,Spencer-Kemp,Retail,2023-06-19,Registered,12265.48
+M-00573,Padilla Ltd,Wholesale,2022-02-25,Registered,34935.34
+M-00574,Murphy Ltd,Retail,2016-09-27,Not Registered,19811.41
+M-00575,Hahn Group,E-commerce,2022-12-22,Registered,4267.08
+M-00576,Hunter-Anderson,Food & Beverage,2021-06-13,Registered,8701.58
+M-00577,"Ritter, Washington and Lowe",Food & Beverage,2016-04-06,Not Registered,44725.21
+M-00578,"Wong, Bell and Larsen",Services,2023-08-04,Registered,46335.14
+M-00579,Cole-Clark,Services,2019-02-12,Not Registered,25755.71
+M-00580,Craig LLC,Food & Beverage,2017-02-21,Registered,25162.63
+M-00581,Myers LLC,Food & Beverage,2020-01-08,Registered,1167.35
+M-00582,Walker Inc,E-commerce,2019-03-15,Not Registered,26203.06
+M-00583,Aguilar-Flores,Services,2016-02-07,Not Registered,15695.11
+M-00584,Zamora Inc,Food & Beverage,2015-01-09,Registered,11958.57
+M-00585,Merritt-Carlson,Services,2023-11-29,Not Registered,46035.43
+M-00586,Jarvis-Sandoval,Food & Beverage,2015-12-01,Not Registered,21547.95
+M-00587,Smith-Tran,E-commerce,2017-09-30,Not Registered,38232.18
+M-00588,Ruiz Inc,Food & Beverage,2016-10-28,Not Registered,5093.76
+M-00589,Bell-Gonzales,Retail,2016-03-11,Registered,49607.74
+M-00590,Cobb Inc,Retail,2016-09-30,Not Registered,21485.86
+M-00591,Arnold and Sons,Food & Beverage,2016-03-04,Registered,32091.21
+M-00592,Terry-Leonard,Food & Beverage,2021-01-17,Registered,17977.71
+M-00593,Lopez and Sons,Retail,2022-01-08,Not Registered,28859.5
+M-00594,Cole-White,Wholesale,2021-03-10,Not Registered,3347.08
+M-00595,Jenkins PLC,Food & Beverage,2016-03-16,Registered,6587.18
+M-00596,"Reed, Kim and Hogan",Services,2016-03-19,Registered,32339.71
+M-00597,Strong Group,Retail,2021-12-30,Registered,16137.79
+M-00598,"Ryan, Barnes and Kirk",Retail,2014-12-28,Not Registered,18362.24
+M-00599,Smith and Sons,Services,2015-12-03,Not Registered,12663.96
+M-00600,Henderson-Wall,Services,2014-12-28,Not Registered,31630.3
+M-00601,Sanders-Jacobson,Retail,2016-12-03,Not Registered,17963.41
+M-00602,Martin-Moran,Food & Beverage,2019-05-19,Registered,24633.09
+M-00603,"Clayton, Wilson and Watson",Services,2020-06-15,Registered,34178.24
+M-00604,Mason Ltd,Food & Beverage,2017-07-21,Registered,47091.52
+M-00605,"Owen, Barton and Miller",E-commerce,2015-05-22,Not Registered,11455.81
+M-00606,"Sandoval, Huffman and Henderson",Wholesale,2018-04-30,Registered,15497.97
+M-00607,Durham Inc,Services,2015-02-03,Not Registered,38887.47
+M-00608,"Wiggins, Kelley and Martinez",E-commerce,2016-03-29,Not Registered,11981.18
+M-00609,Jones-King,Services,2022-02-27,Not Registered,3004.58
+M-00610,Powers PLC,Retail,2015-12-12,Registered,25963.83
+M-00611,Carroll Group,Food & Beverage,2023-01-19,Registered,34610.73
+M-00612,"Elliott, Collins and Rodriguez",Retail,2020-01-10,Not Registered,22951.4
+M-00613,"Mitchell, Sawyer and Rodriguez",E-commerce,2022-04-16,Registered,22400.27
+M-00614,"Morris, Freeman and Jennings",Retail,2017-10-03,Not Registered,6288.27
+M-00615,Arellano-Tucker,Services,2024-01-07,Registered,14702.65
+M-00616,Jordan Group,Wholesale,2015-02-17,Registered,25990.67
+M-00617,Burton Group,Wholesale,2018-12-23,Not Registered,20745.34
+M-00618,Barber-Ferguson,Wholesale,2021-05-03,Not Registered,23048.47
+M-00619,Monroe Ltd,Wholesale,2023-10-14,Registered,4642.86
+M-00620,"Brown, Richards and Wright",E-commerce,2014-11-23,Not Registered,10760.88
+M-00621,Young-Davis,Services,2022-11-28,Not Registered,30355.34
+M-00622,Carrillo-Arias,Food & Beverage,2018-02-18,Not Registered,10798.16
+M-00623,Wright-Joyce,Services,2015-06-01,Not Registered,9948.17
+M-00624,"Mason, Garcia and Powell",Services,2023-02-04,Not Registered,46211.75
+M-00625,"Fitzgerald, Reyes and Powell",E-commerce,2019-05-31,Registered,45667.75
+M-00626,Gregory PLC,Food & Beverage,2019-10-06,Not Registered,24667.49
+M-00627,"Patterson, Walker and Cole",Services,2017-05-29,Not Registered,43388.02
+M-00628,Olsen-Gill,Retail,2020-11-29,Registered,20489.66
+M-00629,Cortez and Sons,Services,2015-02-08,Registered,17672.86
+M-00630,Jones-Patton,Retail,2023-05-02,Registered,20769.47
+M-00631,"Young, Hardy and Moreno",Food & Beverage,2019-07-25,Registered,3708.72
+M-00632,Mcbride Inc,Wholesale,2022-09-16,Registered,7765.77
+M-00633,"Matthews, Torres and Mcdowell",Food & Beverage,2022-03-01,Not Registered,6246.19
+M-00634,Reyes-Campos,E-commerce,2017-10-29,Registered,22577.25
+M-00635,Jones-Roberts,E-commerce,2018-09-25,Registered,23664.71
+M-00636,"Stone, Wilson and Harvey",Retail,2022-06-20,Registered,16455.26
+M-00637,Rodriguez-Cowan,Services,2015-01-12,Not Registered,46936.79
+M-00638,Maddox-Lester,Food & Beverage,2017-03-30,Not Registered,47363.04
+M-00639,"Green, Espinoza and Ponce",Services,2024-10-12,Registered,27374.37
+M-00640,"Morris, Levy and Nixon",E-commerce,2024-06-10,Not Registered,38640.59
+M-00641,Dickson PLC,Services,2016-04-09,Not Registered,20450.16
+M-00642,Campbell-Mcgee,E-commerce,2021-08-20,Registered,31156.13
+M-00643,Hall-Evans,Food & Beverage,2022-12-02,Not Registered,20811.13
+M-00644,Erickson and Sons,Retail,2016-04-22,Not Registered,19131.11
+M-00645,Contreras-Bradley,Food & Beverage,2018-10-09,Not Registered,26110.36
+M-00646,Hernandez-Morales,Services,2016-11-22,Registered,1970.88
+M-00647,Gonzalez and Sons,Wholesale,2016-04-20,Not Registered,12679.95
+M-00648,Hunt Ltd,Services,2024-09-17,Not Registered,30487.14
+M-00649,Lee Ltd,Services,2020-08-27,Not Registered,45104.87
+M-00650,"Marshall, Martinez and Lynn",E-commerce,2023-04-23,Registered,29658.14
+M-00651,Lopez-Vazquez,E-commerce,2016-10-16,Registered,30721.66
+M-00652,"Lucero, Johnson and Ware",Services,2023-10-10,Registered,18834.87
+M-00653,"Crawford, Miller and Love",Food & Beverage,2015-01-22,Registered,7772.55
+M-00654,Daniel Group,Services,2021-07-31,Not Registered,30740.2
+M-00655,Rodriguez and Sons,Wholesale,2022-10-01,Not Registered,11464.07
+M-00656,Acevedo Ltd,Retail,2023-08-29,Registered,1713.49
+M-00657,Turner Ltd,Services,2020-08-23,Not Registered,32116.74
+M-00658,Herrera-Arroyo,Services,2021-03-29,Not Registered,40137.05
+M-00659,"Mitchell, Barnett and Murphy",Wholesale,2020-03-29,Registered,40990.9
+M-00660,Wallace-George,E-commerce,2024-05-23,Registered,23950.87
+M-00661,"Brown, Foster and Nguyen",Food & Beverage,2016-10-27,Registered,42190.09
+M-00662,Rowe and Sons,Services,2022-09-16,Not Registered,31677.33
+M-00663,Hernandez-Campbell,Retail,2020-03-18,Registered,26192.38
+M-00664,Ballard Group,Food & Beverage,2024-06-03,Not Registered,28753.36
+M-00665,"Johnson, Mitchell and Andrade",Retail,2020-09-18,Not Registered,33279.97
+M-00666,Garcia-Williams,E-commerce,2020-01-03,Not Registered,4500.78
+M-00667,"Glenn, Lee and Mckenzie",E-commerce,2020-11-05,Registered,22909.75
+M-00668,Hall-White,Retail,2022-03-10,Registered,30916.98
+M-00669,Burns-Watkins,Retail,2015-05-10,Not Registered,45541.86
+M-00670,Simpson LLC,Food & Beverage,2020-10-19,Registered,1731.32
+M-00671,"Fowler, Knox and Porter",E-commerce,2021-03-28,Registered,45270.02
+M-00672,White-Donovan,Food & Beverage,2022-08-21,Not Registered,35935.57
+M-00673,"Steele, Butler and Howell",Services,2017-08-09,Not Registered,11924.55
+M-00674,Wilson-Hardy,Food & Beverage,2017-12-30,Not Registered,10091.93
+M-00675,"Roach, Scott and Rodriguez",Wholesale,2016-05-18,Not Registered,36285.1
+M-00676,Johnson-Joyce,Services,2023-02-15,Not Registered,24062.17
+M-00677,Turner LLC,Wholesale,2016-12-09,Registered,7882.29
+M-00678,Reyes and Sons,Services,2020-07-29,Not Registered,6085.28
+M-00679,"Moore, George and Flores",E-commerce,2019-03-28,Not Registered,5163.51
+M-00680,Powell-Lopez,Services,2020-02-03,Not Registered,24198.97
+M-00681,"Robles, Burns and Mclean",E-commerce,2020-08-01,Registered,29381.79
+M-00682,Hardy-Harris,Retail,2019-01-09,Not Registered,12033.72
+M-00683,Pham and Sons,Food & Beverage,2019-12-22,Registered,7943.44
+M-00684,Gutierrez-Smith,Wholesale,2015-03-23,Registered,37996.03
+M-00685,Butler-Soto,Food & Beverage,2024-05-13,Registered,43247.18
+M-00686,Oneill Inc,Food & Beverage,2024-02-18,Not Registered,17807.04
+M-00687,"Johnson, Hayes and Frank",Food & Beverage,2016-02-02,Not Registered,44141.42
+M-00688,Hall-Dudley,Services,2015-02-08,Registered,41414.92
+M-00689,"Sosa, Deleon and Lee",E-commerce,2022-02-05,Registered,24183.55
+M-00690,Jenkins Ltd,Wholesale,2016-02-07,Registered,22489.52
+M-00691,"Davis, Garrison and Henderson",Wholesale,2016-04-25,Registered,41922.58
+M-00692,Ford-Miller,Services,2022-10-11,Registered,24322.8
+M-00693,Campbell-Harvey,E-commerce,2017-10-02,Not Registered,7787.33
+M-00694,"Brown, May and Smith",Retail,2020-09-30,Not Registered,12542.97
+M-00695,Ferguson-Pratt,Food & Beverage,2024-06-03,Registered,36937.8
+M-00696,"Foster, Buckley and Green",Food & Beverage,2017-03-09,Registered,7763.73
+M-00697,White-Rowland,Wholesale,2017-03-14,Registered,43830.24
+M-00698,"Robinson, Morgan and Johnson",Services,2018-12-26,Not Registered,18448.25
+M-00699,Neal LLC,E-commerce,2020-11-29,Not Registered,33604.61
+M-00700,Sullivan LLC,Food & Beverage,2014-12-21,Not Registered,2336.62
+M-00701,Foster-Woods,Wholesale,2018-09-04,Registered,44746.52
+M-00702,Woodard-Holt,Retail,2024-08-04,Not Registered,9255.46
+M-00703,Perez Ltd,Wholesale,2022-10-01,Registered,8082.74
+M-00704,"Ward, Buck and Rivera",Food & Beverage,2024-04-03,Not Registered,45565.85
+M-00705,"Perry, Watts and Ponce",Services,2016-02-15,Not Registered,10948.31
+M-00706,"Roberts, Reed and Martinez",Wholesale,2022-07-18,Not Registered,22488.34
+M-00707,Stone-Dunlap,Wholesale,2021-07-20,Not Registered,37614.97
+M-00708,"Porter, Lee and Nichols",Retail,2021-01-22,Not Registered,26896.25
+M-00709,"Hale, Stone and Kirk",Wholesale,2023-06-21,Not Registered,29401.76
+M-00710,Lloyd Group,E-commerce,2023-01-17,Registered,27599.86
+M-00711,"Scott, Parker and Williams",Retail,2015-05-17,Not Registered,48572.87
+M-00712,"Campbell, Collins and Adams",Food & Beverage,2018-09-15,Not Registered,43826.89
+M-00713,Singleton-Joseph,Wholesale,2021-12-24,Not Registered,33184.85
+M-00714,"Newman, Flores and Ellison",Services,2022-09-22,Registered,8830.71
+M-00715,Alvarez-Rodriguez,Services,2024-07-21,Registered,43735.68
+M-00716,Walsh-Wells,Food & Beverage,2023-03-01,Registered,4798.71
+M-00717,Parsons-Ramirez,Food & Beverage,2023-12-02,Not Registered,46018.13
+M-00718,"Mcdaniel, Nash and Woods",E-commerce,2016-02-24,Registered,23958.05
+M-00719,"Howard, Neal and Richards",E-commerce,2022-09-21,Not Registered,10162.17
+M-00720,Johnson Inc,Food & Beverage,2016-07-14,Registered,39047.93
+M-00721,"Mckinney, Ortiz and Rivera",Wholesale,2023-02-07,Not Registered,39523.99
+M-00722,Robinson Ltd,Wholesale,2016-09-28,Not Registered,47607.52
+M-00723,Stone-Whitney,Wholesale,2016-11-12,Not Registered,37693.02
+M-00724,Kennedy-Bell,Retail,2024-04-04,Not Registered,19969.69
+M-00725,Howard-Pennington,Retail,2015-06-06,Registered,31709.32
+M-00726,Davis-Stewart,Food & Beverage,2020-04-08,Registered,26746.92
+M-00727,Ryan-Curtis,Wholesale,2021-04-16,Registered,28100.04
+M-00728,"Jackson, Francis and Black",Services,2022-05-03,Not Registered,30864.03
+M-00729,Strickland-Davis,Services,2021-03-27,Not Registered,8981.07
+M-00730,"Bell, Meza and Montoya",E-commerce,2024-06-25,Registered,21027.56
+M-00731,"Berry, Smith and Vasquez",Services,2016-07-06,Registered,9706.24
+M-00732,Scott-Anderson,E-commerce,2017-04-11,Not Registered,30782.51
+M-00733,Brooks LLC,Services,2022-08-15,Not Registered,19768.29
+M-00734,Swanson-Davis,Retail,2016-06-12,Registered,35366.43
+M-00735,Kim Ltd,Wholesale,2020-05-27,Registered,27195.14
+M-00736,"Campbell, Singh and Montoya",Retail,2018-06-27,Registered,33444.05
+M-00737,"Benitez, Mccullough and Moore",E-commerce,2019-11-11,Not Registered,21719.33
+M-00738,"Haynes, Gentry and Frazier",Food & Beverage,2015-04-27,Not Registered,17960.7
+M-00739,Miller-Adams,Services,2017-11-05,Registered,17466.21
+M-00740,Adams Group,Wholesale,2016-11-17,Not Registered,42026.44
+M-00741,Pratt-Long,Wholesale,2017-12-06,Registered,2724.67
+M-00742,"Koch, Lynch and Mann",Wholesale,2023-05-01,Not Registered,16542.3
+M-00743,Livingston-Shaw,E-commerce,2015-11-11,Not Registered,3532.29
+M-00744,Hughes-Hayes,Services,2015-08-01,Not Registered,25565.46
+M-00745,Patterson-Browning,E-commerce,2020-03-03,Not Registered,15424.43
+M-00746,Mccann-Sutton,E-commerce,2023-06-27,Registered,1097.13
+M-00747,"Torres, West and Hamilton",E-commerce,2020-06-09,Registered,42998.04
+M-00748,Griffith Group,Food & Beverage,2022-10-27,Registered,10975.09
+M-00749,Guzman Ltd,Services,2016-09-01,Registered,42949.36
+M-00750,Rogers and Sons,E-commerce,2019-09-30,Registered,21022.29
+M-00751,Wright LLC,Food & Beverage,2024-11-19,Registered,22903.81
+M-00752,"Smith, Clark and Stanley",Wholesale,2019-06-22,Not Registered,22611.4
+M-00753,Travis-Barton,Retail,2022-11-07,Registered,3682.4
+M-00754,"Holland, Jackson and Robinson",Wholesale,2022-05-21,Not Registered,28316.64
+M-00755,Phillips-Duncan,Wholesale,2023-11-23,Registered,44954.07
+M-00756,Duncan-Pace,Wholesale,2020-06-26,Not Registered,26816.45
+M-00757,"Blake, Williams and Smith",Food & Beverage,2018-11-30,Not Registered,36350.33
+M-00758,Cruz and Sons,E-commerce,2021-07-17,Not Registered,35562.64
+M-00759,Cain-Turner,Food & Beverage,2020-09-29,Registered,49292.99
+M-00760,Cline-Scott,Food & Beverage,2018-03-01,Not Registered,18197.88
+M-00761,"Bender, Wood and Griffin",Retail,2021-07-24,Not Registered,43803.41
+M-00762,Calderon-Huffman,Retail,2018-05-24,Registered,34524.3
+M-00763,Delgado-Sanford,Retail,2021-01-16,Registered,30287.28
+M-00764,Mann-Morris,Wholesale,2019-03-13,Not Registered,5839.21
+M-00765,Hester-Hobbs,E-commerce,2023-09-14,Registered,22410.43
+M-00766,Terrell-Whitney,Retail,2015-10-12,Registered,5669.74
+M-00767,Kelley-Black,E-commerce,2015-11-26,Not Registered,49732.78
+M-00768,Hansen-Gates,Wholesale,2019-01-23,Not Registered,18106.46
+M-00769,Vega-Smith,Retail,2019-07-17,Not Registered,25299.71
+M-00770,Harris-Miranda,Services,2016-04-21,Registered,23005.06
+M-00771,Oneill Group,Wholesale,2023-07-03,Registered,15593.66
+M-00772,Henderson-Williamson,Wholesale,2019-03-14,Registered,36175.45
+M-00773,Tyler and Sons,Food & Beverage,2021-06-08,Not Registered,37476.34
+M-00774,Medina-Harvey,E-commerce,2024-01-17,Not Registered,24266.55
+M-00775,"Rodriguez, Mcdonald and Wilson",Services,2015-12-11,Not Registered,21978.94
+M-00776,Stewart Ltd,E-commerce,2017-08-02,Not Registered,4375.94
+M-00777,Reyes and Sons,Retail,2016-08-20,Registered,22752.31
+M-00778,Baker-Williams,Food & Beverage,2018-06-07,Not Registered,43105.22
+M-00779,Conner-Evans,Wholesale,2024-05-07,Not Registered,1443.78
+M-00780,Franklin-Gonzalez,E-commerce,2017-12-08,Not Registered,24547.14
+M-00781,"Deleon, Mayer and Obrien",Wholesale,2020-03-08,Not Registered,37913.92
+M-00782,Johnson Group,Food & Beverage,2023-02-12,Not Registered,19914.88
+M-00783,Kim Inc,Food & Beverage,2024-10-13,Not Registered,6501.31
+M-00784,"Lambert, White and Miller",Wholesale,2017-01-01,Registered,24446.66
+M-00785,Obrien-Pham,Retail,2017-10-28,Not Registered,33280.5
+M-00786,"Yoder, Brock and Henry",Food & Beverage,2017-08-25,Not Registered,8076.62
+M-00787,"Bell, Mason and Roman",Services,2023-11-28,Registered,7583.66
+M-00788,Thompson Ltd,E-commerce,2016-09-26,Not Registered,6515.31
+M-00789,Lynn Group,E-commerce,2018-12-26,Not Registered,37086.35
+M-00790,Gomez PLC,Services,2017-10-15,Not Registered,9745.82
+M-00791,Wade and Sons,Retail,2018-10-19,Not Registered,30824.82
+M-00792,"Palmer, Alvarez and Davis",Retail,2017-02-27,Registered,47140.99
+M-00793,"Bryant, Hernandez and Holder",E-commerce,2016-01-30,Not Registered,26440.0
+M-00794,Perry Inc,Wholesale,2018-09-30,Registered,23736.65
+M-00795,Jackson and Sons,Food & Beverage,2015-09-06,Not Registered,25421.62
+M-00796,"Chambers, Page and Green",Services,2024-10-20,Registered,46178.68
+M-00797,Blake Group,Wholesale,2024-06-09,Registered,20204.21
+M-00798,Lee PLC,E-commerce,2019-07-01,Registered,38683.95
+M-00799,"Phillips, Turner and Cohen",Food & Beverage,2017-04-01,Not Registered,20792.97
+M-00800,"Nguyen, Moreno and Wilson",Retail,2016-04-28,Registered,33394.81
+M-00801,"Jones, Wilson and Clark",Services,2018-03-12,Registered,8133.74
+M-00802,Smith Ltd,Retail,2021-03-23,Not Registered,32915.12
+M-00803,Mcintosh Inc,E-commerce,2018-06-24,Not Registered,36713.63
+M-00804,"Tran, Ramsey and Williams",Retail,2017-02-19,Registered,38535.81
+M-00805,Jones-Petersen,Food & Beverage,2019-08-22,Not Registered,33857.22
+M-00806,"Leonard, Norman and Copeland",Food & Beverage,2024-09-08,Not Registered,22457.61
+M-00807,"Wheeler, Hamilton and Morgan",Wholesale,2020-03-26,Registered,46550.28
+M-00808,"Powers, Lee and Rivers",Services,2018-08-19,Not Registered,23297.36
+M-00809,Bray-Suarez,Wholesale,2023-12-08,Not Registered,5463.1
+M-00810,"Thompson, Landry and Thompson",E-commerce,2019-09-18,Not Registered,28013.07
+M-00811,Braun-Strickland,Retail,2020-04-09,Registered,27985.24
+M-00812,Fletcher-Martin,Services,2015-07-08,Registered,22066.02
+M-00813,Hunter-Barber,E-commerce,2024-05-07,Not Registered,16447.52
+M-00814,"Ray, Crane and Valentine",Wholesale,2023-06-27,Not Registered,40239.22
+M-00815,Elliott-Crane,Food & Beverage,2019-07-31,Not Registered,39718.89
+M-00816,"Robertson, Farmer and Schmidt",Food & Beverage,2015-11-20,Registered,18310.31
+M-00817,Avila-Brooks,Wholesale,2016-09-07,Not Registered,2344.43
+M-00818,Gray-May,Retail,2019-09-29,Registered,43261.59
+M-00819,"Briggs, Knox and Strickland",Wholesale,2024-04-13,Registered,16040.55
+M-00820,"Hill, Garcia and Hall",Food & Beverage,2020-09-22,Registered,25463.05
+M-00821,"Baker, Shelton and Bishop",Food & Beverage,2024-01-26,Registered,44490.62
+M-00822,"Clark, Taylor and Howard",Services,2018-08-11,Not Registered,18273.66
+M-00823,Brown LLC,Food & Beverage,2019-02-16,Registered,33003.06
+M-00824,Trujillo-Brown,Services,2024-08-13,Not Registered,12226.51
+M-00825,Wolf Ltd,Food & Beverage,2022-10-22,Not Registered,8116.81
+M-00826,"Mathis, Smith and Mueller",Services,2018-01-15,Not Registered,9797.2
+M-00827,Freeman-Ortiz,E-commerce,2015-08-14,Not Registered,24889.55
+M-00828,Hamilton-Jackson,Food & Beverage,2022-03-25,Not Registered,37640.06
+M-00829,"Garza, Smith and Garcia",Services,2024-02-13,Not Registered,4874.66
+M-00830,"Banks, Mercado and Smith",Food & Beverage,2015-03-20,Registered,47381.5
+M-00831,Diaz-Nelson,Retail,2022-02-28,Registered,4339.04
+M-00832,Rivera Ltd,Wholesale,2022-12-17,Registered,41863.11
+M-00833,Suarez Ltd,Services,2023-04-14,Registered,5594.2
+M-00834,Mueller LLC,Wholesale,2021-04-24,Not Registered,5460.6
+M-00835,Perez-Wilkerson,Retail,2023-04-16,Registered,47238.77
+M-00836,"Fry, Graham and Potter",Wholesale,2015-10-31,Registered,38984.33
+M-00837,Estrada-Underwood,Wholesale,2024-09-28,Registered,35937.4
+M-00838,Dixon Inc,Food & Beverage,2024-02-02,Registered,24859.19
+M-00839,Small-Diaz,Food & Beverage,2023-12-06,Registered,8814.73
+M-00840,Obrien-Proctor,Services,2016-03-16,Not Registered,20321.67
+M-00841,Rodriguez LLC,Retail,2021-01-22,Registered,9406.11
+M-00842,Lucas-Moore,Food & Beverage,2022-08-11,Registered,32628.87
+M-00843,Knox-Garcia,E-commerce,2023-08-11,Registered,7510.9
+M-00844,Beck-Allison,Services,2017-01-22,Registered,41073.58
+M-00845,Simon-Sparks,E-commerce,2018-03-27,Registered,17307.83
+M-00846,"Johnson, Anderson and Vaughn",Food & Beverage,2018-05-13,Not Registered,10153.02
+M-00847,"Thompson, Smith and Wong",E-commerce,2021-08-29,Not Registered,13875.13
+M-00848,Mckenzie LLC,Food & Beverage,2017-05-22,Not Registered,10557.94
+M-00849,Rios LLC,Wholesale,2015-11-16,Not Registered,49590.68
+M-00850,Pena-Lee,E-commerce,2021-03-06,Not Registered,36293.1
+M-00851,Hart-Lewis,Wholesale,2024-03-29,Not Registered,34092.75
+M-00852,Nguyen Ltd,Food & Beverage,2016-02-18,Not Registered,1908.51
+M-00853,Munoz-Hansen,E-commerce,2021-08-08,Registered,37054.25
+M-00854,Wilson-Chase,Wholesale,2022-09-29,Registered,13963.62
+M-00855,Parker Inc,Retail,2016-03-03,Not Registered,16375.71
+M-00856,"Ward, Rollins and Foster",E-commerce,2023-07-31,Not Registered,12297.28
+M-00857,Nelson LLC,Wholesale,2023-10-26,Registered,33611.78
+M-00858,Dixon-Huang,Services,2021-07-20,Not Registered,7184.25
+M-00859,"Gray, Olson and Watson",Food & Beverage,2021-03-18,Not Registered,5437.97
+M-00860,Richards PLC,Services,2018-10-09,Not Registered,8075.33
+M-00861,Carlson and Sons,Services,2020-04-05,Registered,1118.05
+M-00862,Trevino Inc,E-commerce,2017-09-17,Not Registered,13322.01
+M-00863,Cherry-Valdez,Wholesale,2020-10-10,Not Registered,31905.06
+M-00864,Ramirez Inc,Services,2018-08-01,Not Registered,23241.74
+M-00865,"Waters, Fleming and Peters",Retail,2015-12-22,Not Registered,5031.89
+M-00866,Orozco and Sons,Food & Beverage,2023-07-15,Registered,12137.94
+M-00867,"Gonzalez, Brady and Arnold",Retail,2023-08-21,Registered,11575.89
+M-00868,Hamilton Ltd,Retail,2020-02-15,Not Registered,17064.08
+M-00869,Snow LLC,Services,2017-02-22,Not Registered,4595.37
+M-00870,Terry-Davis,Food & Beverage,2020-02-05,Not Registered,30518.04
+M-00871,Aguilar-Brown,Services,2018-03-29,Registered,16243.06
+M-00872,"Parker, Lewis and Riley",Food & Beverage,2015-03-01,Not Registered,5423.43
+M-00873,Williams Inc,E-commerce,2022-12-24,Not Registered,40515.73
+M-00874,Washington and Sons,Retail,2024-02-23,Not Registered,15591.05
+M-00875,"Curtis, Perry and Fernandez",Wholesale,2024-07-07,Registered,21401.66
+M-00876,Odonnell-Hatfield,Wholesale,2016-11-02,Registered,5596.97
+M-00877,Barrera-Ho,Retail,2017-06-19,Not Registered,7002.61
+M-00878,"Kirby, Patel and Aguilar",Retail,2017-01-16,Not Registered,11055.49
+M-00879,"Zavala, Anderson and Sanders",E-commerce,2023-10-29,Not Registered,26562.1
+M-00880,Garcia PLC,E-commerce,2023-11-28,Registered,31546.83
+M-00881,Walters-Sanchez,Food & Beverage,2021-05-31,Registered,3427.81
+M-00882,Wright PLC,Services,2017-05-11,Registered,24493.96
+M-00883,Taylor-Patel,Food & Beverage,2018-04-05,Not Registered,35093.82
+M-00884,"Beck, Murphy and Kelly",Services,2016-11-20,Registered,6594.36
+M-00885,Cooke and Sons,Wholesale,2020-08-22,Not Registered,34278.95
+M-00886,Davis-Acevedo,Services,2023-09-17,Not Registered,20021.37
+M-00887,"Martin, Walters and Green",Wholesale,2018-02-22,Registered,14021.44
+M-00888,Steele Ltd,Food & Beverage,2016-02-29,Registered,25924.21
+M-00889,Smith-Stewart,E-commerce,2022-09-26,Not Registered,28721.62
+M-00890,Parker-Gallagher,Food & Beverage,2024-05-12,Not Registered,24707.13
+M-00891,"Vincent, Obrien and Dixon",Retail,2016-11-06,Registered,6209.02
+M-00892,"Moses, Baker and Short",Wholesale,2015-05-01,Not Registered,31342.64
+M-00893,Hill Inc,Wholesale,2024-10-25,Registered,6482.13
+M-00894,Parker PLC,Food & Beverage,2018-05-29,Registered,37132.55
+M-00895,"King, Patel and Klein",Wholesale,2019-10-28,Registered,20111.92
+M-00896,"Graves, Macdonald and Tapia",Services,2023-12-27,Registered,5446.18
+M-00897,"Olson, Morris and Smith",Retail,2021-10-16,Not Registered,10572.14
+M-00898,"Hunter, Burch and Faulkner",Retail,2019-05-08,Not Registered,46164.59
+M-00899,Turner and Sons,E-commerce,2015-06-23,Not Registered,48678.49
+M-00900,Serrano-Washington,E-commerce,2017-05-31,Not Registered,43729.35
+M-00901,Wood-Odonnell,Food & Beverage,2017-12-13,Registered,21410.2
+M-00902,Daniels-Hansen,E-commerce,2017-04-26,Not Registered,27889.19
+M-00903,Shannon-Lopez,Services,2021-10-13,Registered,31498.4
+M-00904,Jones-Farrell,E-commerce,2016-03-21,Not Registered,26765.26
+M-00905,Todd Group,Services,2024-04-23,Registered,8079.26
+M-00906,Castillo and Sons,Wholesale,2019-10-22,Registered,24010.28
+M-00907,Dickson-Colon,E-commerce,2022-12-15,Not Registered,46716.32
+M-00908,"Brooks, Brown and Morris",Wholesale,2021-03-16,Registered,42718.25
+M-00909,Reyes-Freeman,Retail,2023-09-05,Not Registered,31241.83
+M-00910,"Jackson, Smith and Gaines",Wholesale,2019-06-30,Not Registered,24806.22
+M-00911,"Schmitt, Duran and Lane",Food & Beverage,2016-10-06,Not Registered,25961.93
+M-00912,"Ramos, Jordan and Wagner",Retail,2021-08-02,Registered,20237.39
+M-00913,"Hopkins, Holloway and Bartlett",E-commerce,2018-01-29,Registered,27494.48
+M-00914,Solis LLC,Wholesale,2016-03-02,Not Registered,2653.64
+M-00915,Norman-Alvarado,Food & Beverage,2024-11-16,Not Registered,11089.19
+M-00916,"Franklin, Banks and Barron",E-commerce,2016-10-27,Registered,46886.45
+M-00917,Weaver-Berry,E-commerce,2017-10-06,Registered,43935.28
+M-00918,"Johnson, Beard and Sellers",Food & Beverage,2020-04-27,Not Registered,31917.88
+M-00919,Fitzgerald-Perkins,E-commerce,2016-01-31,Registered,40524.24
+M-00920,"Dixon, Gray and Hansen",Wholesale,2017-02-12,Not Registered,6651.53
+M-00921,"Marshall, Mendoza and Orozco",Food & Beverage,2018-08-31,Registered,11175.38
+M-00922,Nguyen LLC,Retail,2019-10-28,Not Registered,49224.43
+M-00923,Collins-Atkins,Retail,2023-07-30,Registered,38241.34
+M-00924,Hicks-Lewis,E-commerce,2018-09-26,Not Registered,34853.37
+M-00925,Gibson-Gibbs,E-commerce,2022-12-27,Registered,26051.92
+M-00926,"Walker, Owen and Stanley",Retail,2021-11-09,Not Registered,13126.25
+M-00927,Edwards-Sullivan,Services,2023-11-16,Not Registered,28275.03
+M-00928,Stephens-Boyd,Food & Beverage,2019-06-06,Registered,16962.27
+M-00929,Arellano LLC,Services,2017-09-26,Not Registered,13925.78
+M-00930,Norris and Sons,Retail,2018-01-22,Registered,2412.73
+M-00931,"Bray, Neal and Hernandez",Retail,2020-05-25,Not Registered,16844.8
+M-00932,Mitchell and Sons,Retail,2021-02-03,Registered,3704.53
+M-00933,"Hall, Smith and Davis",Services,2023-02-20,Not Registered,40678.82
+M-00934,Richards-Parker,E-commerce,2016-04-08,Registered,46718.43
+M-00935,Powers-Moreno,Food & Beverage,2019-12-07,Not Registered,36663.92
+M-00936,"Gentry, West and Payne",Wholesale,2020-10-09,Registered,48104.79
+M-00937,Carey-Ford,Wholesale,2022-05-26,Not Registered,23711.43
+M-00938,Carter Group,Wholesale,2022-03-07,Registered,21529.17
+M-00939,"Brown, Brown and Evans",Food & Beverage,2017-01-04,Not Registered,34656.22
+M-00940,Thompson-Logan,Wholesale,2015-05-08,Registered,3453.63
+M-00941,"Wilson, Benson and Spears",Services,2022-01-12,Registered,7880.92
+M-00942,Pennington Inc,E-commerce,2018-03-16,Not Registered,29853.23
+M-00943,Martinez PLC,Wholesale,2017-07-25,Registered,25514.18
+M-00944,Decker-Shelton,Retail,2023-01-25,Not Registered,34834.79
+M-00945,"Pollard, Lawson and Wolf",Food & Beverage,2023-01-09,Registered,37266.04
+M-00946,Reyes Group,Wholesale,2020-10-06,Not Registered,12661.9
+M-00947,"Alvarado, Ray and Nelson",Services,2015-02-21,Registered,12000.35
+M-00948,Walter LLC,Food & Beverage,2024-01-28,Registered,5850.98
+M-00949,"Norton, Woodward and Park",Food & Beverage,2019-08-28,Not Registered,26817.59
+M-00950,Richardson Group,Retail,2024-06-04,Not Registered,2359.75
+M-00951,Powell PLC,Wholesale,2020-07-05,Registered,12174.35
+M-00952,"Wilcox, Meyer and Anderson",Retail,2020-02-28,Not Registered,27782.71
+M-00953,"Hudson, Jones and Johnson",E-commerce,2020-08-06,Registered,34263.66
+M-00954,Fisher PLC,E-commerce,2020-05-30,Registered,34045.55
+M-00955,Thompson PLC,Wholesale,2016-10-07,Not Registered,14995.2
+M-00956,Ramsey-White,Services,2024-01-20,Not Registered,35094.75
+M-00957,Davis-Wilson,E-commerce,2018-11-28,Registered,41722.34
+M-00958,Acosta Group,E-commerce,2019-05-02,Registered,39522.0
+M-00959,Esparza Inc,Wholesale,2017-07-22,Registered,39218.4
+M-00960,Kim-Douglas,Services,2020-04-10,Not Registered,11127.33
+M-00961,"Bray, Gray and Herrera",Wholesale,2022-04-12,Not Registered,1498.18
+M-00962,Espinoza Group,Retail,2022-03-02,Registered,37687.8
+M-00963,Mcguire-Thomas,Food & Beverage,2019-02-24,Not Registered,6014.09
+M-00964,Stewart Group,E-commerce,2019-07-30,Not Registered,24063.63
+M-00965,Anderson-May,E-commerce,2019-09-17,Registered,31191.84
+M-00966,"Long, Davidson and Mccoy",Retail,2019-10-28,Registered,8079.46
+M-00967,"Decker, Beard and Blackwell",Services,2023-02-08,Registered,44671.72
+M-00968,"Newman, Morton and Jenkins",Food & Beverage,2021-01-21,Registered,21112.83
+M-00969,Lowery-Keith,Services,2023-12-29,Registered,14964.79
+M-00970,Sanders LLC,Wholesale,2018-10-02,Registered,25259.36
+M-00971,"Smith, Lamb and Hanna",Food & Beverage,2023-08-25,Not Registered,16628.34
+M-00972,Thompson PLC,Food & Beverage,2019-08-22,Not Registered,15842.6
+M-00973,Rosales-Archer,Wholesale,2022-07-30,Registered,3987.1
+M-00974,Robinson Group,Services,2017-06-19,Not Registered,31621.94
+M-00975,Smith Ltd,Food & Beverage,2019-04-12,Not Registered,12728.92
+M-00976,Moran LLC,E-commerce,2023-06-29,Registered,32891.39
+M-00977,Robbins-Mejia,Services,2022-03-25,Not Registered,12838.28
+M-00978,"Wilson, Robinson and Vargas",Services,2022-10-02,Not Registered,27036.83
+M-00979,Moreno-Young,Services,2017-08-07,Registered,34103.23
+M-00980,Maldonado-Kelly,Retail,2016-03-20,Not Registered,36856.22
+M-00981,"Warren, Hood and Glass",Wholesale,2019-02-27,Not Registered,21673.42
+M-00982,Bass Inc,Food & Beverage,2016-12-18,Registered,32666.55
+M-00983,Cook and Sons,Wholesale,2021-10-04,Not Registered,49709.51
+M-00984,"Oconnor, Simpson and Anderson",E-commerce,2023-09-25,Registered,24425.77
+M-00985,"Bates, Hale and Gibson",Retail,2019-04-19,Not Registered,49356.27
+M-00986,Porter-Coleman,Retail,2019-03-27,Not Registered,25024.59
+M-00987,"Scott, Wright and Boyd",Retail,2018-02-21,Registered,24874.93
+M-00988,"Franklin, Dixon and Meyer",Retail,2016-02-04,Registered,9195.05
+M-00989,"Kelly, Mccoy and Weiss",Retail,2014-12-01,Registered,1652.79
+M-00990,Diaz LLC,Services,2023-07-27,Registered,35723.84
+M-00991,Smith Ltd,Wholesale,2022-02-25,Not Registered,17006.58
+M-00992,"Lloyd, Pope and Hurst",Food & Beverage,2019-03-10,Not Registered,16753.15
+M-00993,Nelson Group,Services,2023-04-28,Not Registered,42511.16
+M-00994,"Walter, Tucker and Johnson",Services,2017-04-03,Not Registered,48191.18
+M-00995,Chase PLC,E-commerce,2017-09-23,Registered,32252.55
+M-00996,"Humphrey, Padilla and Dominguez",Wholesale,2016-01-13,Registered,6780.82
+M-00997,Thomas-Jackson,Services,2022-02-28,Registered,12527.37
+M-00998,Cook-Brown,E-commerce,2020-03-23,Not Registered,39331.57
+M-00999,Hunt-Ford,Services,2018-11-10,Registered,28578.66
+M-01000,"Chang, Chapman and Jones",Wholesale,2018-11-20,Not Registered,28044.31
