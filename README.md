@@ -50,8 +50,7 @@ modus_ai/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/modus_ai.git
-   cd modus_ai
+   git clone https://github.com/yawningwinner/winter_assignment_Arin_Dhariwal.git
    ```
 
 2. **Install Dependencies**
