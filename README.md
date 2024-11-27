@@ -1,14 +1,14 @@
-# Winter_Assignment
+# Merchant Transaction Analysis System
 
-A merchant transaction analysis system that generates synthetic merchant data, manages transactions, and provides API endpoints for monitoring and analysis.
+A merchant transaction analysis system that generates synthetic merchant data, manages transactions, and provides API endpoints for monitoring and anomaly detection.
 
 ## Table of Contents
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Database Setup](#database-setup)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
+- [API Documentation](#api-documentation)
+- [Usage Examples](#usage-examples)
 
 ## Features
 
@@ -16,9 +16,8 @@ A merchant transaction analysis system that generates synthetic merchant data, m
 - Generates synthetic merchant profiles and transaction data
 - Creates realistic patterns including:
   - Normal business transactions
-  - Fraudulent patterns (late-night transactions, high-velocity transactions, customer concentration)
+  - Fraudulent patterns (late-night transactions, high-velocity transactions)
 - Configurable parameters for merchant count and transaction volume
-- Supports various business types and GST statuses
 
 ### 2. Database Management
 - PostgreSQL database with SQLAlchemy ORM
@@ -26,132 +25,134 @@ A merchant transaction analysis system that generates synthetic merchant data, m
 - Database initialization and recreation utilities
 - Support for both synthetic and CSV data loading
 
-### 3. REST API (`main.py`)
-- FastAPI-based endpoints for data access
-- Transaction querying with date filtering
-- Merchant profile management
-- Anomaly detection capabilities
+### 3. REST API Endpoints
+#### Merchant Profile Management
+- Get all merchants (with pagination)
+- Get merchant profile by ID
+- Filter merchants by status
+
+#### Transaction Management
+- Get transaction history with date filtering
+- Transaction status monitoring
+- Detailed transaction analysis
+
+#### Risk & Anomaly Detection
+- Real-time anomaly detection
+- Risk metrics calculation
+- Pattern recognition:
+  - Large amount transactions
+  - Late night activity
+  - Round amount patterns
+- Bulk anomaly detection across merchants
 
 ## Project Structure
 ```
-modus_ai/
-├── data_generator.py          # Synthetic data generation
-├── add_data.py               # CSV data loading utility
-├── setup_database.py         # Database setup script
-├── recreate_db.py           # Database recreation utility
-├── merchant_api/
-│   └── app/
-│       ├── models.py         # Database models
-│       ├── main.py          # API endpoints
-│       ├── init_db.py       # Database initialization
-│       └── db.py            # Database configuration
+merchant_api/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # FastAPI application
+│   ├── db.py               # Database configuration
+│   ├── models.py           # SQLAlchemy models
+│   ├── schemas.py          # Pydantic schemas
+│   └── api/
+│       ├── __init__.py
+│       └── endpoints/
+│           ├── __init__.py
+│           └── anomaly.py   # API endpoints
+├── data_generator.py        # Synthetic data generation
+├── setup_database.py       # Database setup script
+└── requirements.txt        # Project dependencies
 ```
 
 ## Installation
 
 1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yawningwinner/winter_assignment_Arin_Dhariwal.git
-   ```
+```bash
+git clone https://github.com/yourusername/merchant_analysis.git
+cd merchant_analysis
+```
 
-2. **Install Dependencies**
-   ```bash
-   pip install fastapi sqlalchemy psycopg2-binary uvicorn pandas python-dotenv
-   ```
+2. **Create Virtual Environment**
+```bash
+python -m venv myenv
+source myenv/bin/activate  # On Windows: myenv\Scripts\activate
+```
 
-3. **Configure Database**
-   - Ensure PostgreSQL is installed and running
-   - Update database credentials in `merchant_api/app/db.py`
+3. **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Configure Database**
+Update database credentials in `merchant_api/app/db.py`:
+```python
+DATABASE_URL = "postgresql://user:password@localhost:5432/merchant_db"
+```
 
 ## Database Setup
 
-### Option 1: Generate Synthetic Data
+1. **Initialize Database**
 ```bash
 python setup_database.py
 ```
-This will:
-- Initialize the database schema
-- Generate synthetic merchants and transactions
-- Include both normal and fraudulent patterns
 
-### Option 2: Load from CSV
+2. **Generate Sample Data**
 ```bash
-python add_data.py
-```
-This will:
-- Clear existing tables
-- Load merchant profiles from `data/merchant_profiles.csv`
-- Load transactions from `data/transaction_data.csv`
-
-### Reset Database
-```bash
-python recreate_db.py
+python data_generator.py
 ```
 
-## Usage
+## API Documentation
+
+### Available Endpoints
+
+#### Merchant Endpoints
+```http
+GET /api/v1/merchants
+GET /api/v1/merchants/{merchant_id}
+```
+
+#### Transaction Endpoints
+```http
+GET /api/v1/merchants/{merchant_id}/transactions
+```
+
+#### Risk & Anomaly Detection
+```http
+GET /api/v1/merchants/{merchant_id}/risk-metrics
+POST /api/v1/merchants/{merchant_id}/detect-anomalies
+POST /api/v1/merchants/detect-all-anomalies
+```
+
+### Query Parameters
+- `start_date`: Filter by start date (YYYY-MM-DD)
+- `end_date`: Filter by end date (YYYY-MM-DD)
+- `limit`: Number of records to return
+- `skip`: Number of records to skip
+- `status`: Filter by merchant status
+
+## Usage Examples
 
 ### Start the API Server
 ```bash
 uvicorn merchant_api.app.main:app --reload
 ```
 
-## API Endpoints
+### API Calls
 
-### Get All Merchants
-```http
-GET /merchants/
-```
-Returns a list of all merchant profiles.
-
-### Get Merchant Transactions
-```http
-GET /transactions/{merchant_id}
-```
-Query Parameters:
-- `start_date`: Optional start date filter (YYYY-MM-DD)
-- `end_date`: Optional end date filter (YYYY-MM-DD)
-
-### Detect Anomalies
-```http
-POST /detect-anomalies/
-```
-Triggers anomaly detection across all transactions.
-
-### Get Merchant Anomalies
-```http
-GET /anomalies/{merchant_id}
-```
-Query Parameters:
-- `start_date`: Optional start date filter (YYYY-MM-DD)
-- `end_date`: Optional end date filter (YYYY-MM-DD)
-
-## Data Models
-
-### Merchant
-```python
-class Merchant:
-    merchant_id: str          # Format: M-XXXXX
-    name: str                 # Business name
-    business_type: str        # Type of business
-    registration_date: date   # Registration date
-    gst_status: str          # GST registration status
-    avg_transaction_volume: float
+1. **Get All Merchants**
+```bash
+curl -X GET "http://localhost:8000/api/v1/merchants?limit=10&skip=0"
 ```
 
-### Transaction
-```python
-class Transaction:
-    merchant_id: str          # Reference to merchant
-    transaction_date: datetime
-    transaction_amount: float
-    customer_id: str
-    is_anomaly: bool
-    anomaly_reasons: str      # Comma-separated reasons
+2. **Get Merchant Profile**
+```bash
+curl -X GET "http://localhost:8000/api/v1/merchants/M5528135"
 ```
 
-## Database Configuration
-The default database configuration in `db.py`:
-```python
-DATABASE_URL = "postgresql://merchant_user:password123@localhost:5432/merchant_db"
+3. **Detect Anomalies**
+```bash
+curl -X POST "http://localhost:8000/api/v1/merchants/M5528135/detect-anomalies" \
+     -H "accept: application/json" \
+     -d '{"start_date": "2024-01-01", "end_date": "2024-02-01"}'
 ```
-Update these credentials according to your PostgreSQL setup.
+

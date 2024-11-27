@@ -19,23 +19,39 @@ def load_data():
         merchants_df = pd.read_csv("data/merchant_profiles.csv")
         transactions_df = pd.read_csv("data/transaction_data.csv")
 
-        # Create database session
         db = SessionLocal()
-
         try:
             # Add merchants
             for _, row in merchants_df.iterrows():
                 merchant = Merchant(
-                    merchant_id=row['MerchantID'],
-                    name=row['Name'],
-                    business_type=row['BusinessType'],
-                    registration_date=pd.to_datetime(row['RegistrationDate']).to_pydatetime(),
-                    gst_status=row['GSTStatus'],
-                    avg_transaction_volume=float(row['AvgTransactionVolume'])
+                    # Basic Information
+                    merchant_id=row['merchant_id'],
+                    business_name=row['business_name'],
+                    business_type=row['business_type'],
+                    registration_date=pd.to_datetime(row['registration_date']).to_pydatetime(),
+                    
+                    # Business Details
+                    business_model=row['business_model'],
+                    product_category=row['product_category'],
+                    average_ticket_size=float(row['average_ticket_size']),
+                    
+                    # Registration Details
+                    gst_status=row['gst_status'],
+                    pan_number=row['pan_number'],
+                    epfo_registered=row['epfo_registered'],
+                    
+                    # Location Details
+                    registered_address=row['registered_address'],
+                    city=row['city'],
+                    state=row['state'],
+                    
+                    # Financial Details
+                    reported_revenue=float(row['reported_revenue']),
+                    employee_count=int(row['employee_count']),
+                    bank_account=row['bank_account']
                 )
                 db.add(merchant)
             
-            # Commit merchants first
             db.commit()
             print(f"Loaded {len(merchants_df)} merchants successfully!")
 
@@ -47,11 +63,28 @@ def load_data():
                 batch = transactions_df.iloc[i:i + batch_size]
                 for _, row in batch.iterrows():
                     transaction = Transaction(
-                        merchant_id=row['MerchantID'],
-                        transaction_date=pd.to_datetime(row['TransactionDate']).to_pydatetime(),
-                        transaction_amount=float(row['TransactionAmount']),
-                        customer_id=str(row['CustomerID']),
-                        is_anomaly=bool(row['IsAnomaly'])
+                        # Basic Transaction Info
+                        transaction_id=row['transaction_id'],
+                        merchant_id=row['merchant_id'],
+                        timestamp=pd.to_datetime(row['timestamp']).to_pydatetime(),
+                        amount=float(row['amount']),
+                        
+                        # Customer Info
+                        customer_id=row['customer_id'],
+                        device_id=row['device_id'],
+                        customer_location=row['customer_location'],
+                        
+                        # Transaction Details
+                        payment_method=row['payment_method'],
+                        status=row['status'],
+                        product_category=row['product_category'],
+                        platform=row['platform'],
+                        
+                        # Risk Indicators
+                        velocity_flag=bool(row['velocity_flag']),
+                        amount_flag=bool(row['amount_flag']),
+                        time_flag=bool(row['time_flag']),
+                        device_flag=bool(row['device_flag'])
                     )
                     db.add(transaction)
                 
@@ -60,7 +93,6 @@ def load_data():
                 print(f"Processed {total_transactions} transactions...")
             
             print(f"Loaded {total_transactions} transactions successfully!")
-            print("All data loaded successfully!")
 
         except Exception as e:
             print(f"Error loading data: {e}")
