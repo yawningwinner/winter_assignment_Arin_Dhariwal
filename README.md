@@ -55,7 +55,7 @@ merchant_api/
 │   ├── models.py           # SQLAlchemy models
 │   ├── schemas.py          # Pydantic schemas
 │   └── api/
-│       ├── __init__.py
+│       |
 │       └── endpoints/
 │           ├── __init__.py
 │           └── anomaly.py   # API endpoints
