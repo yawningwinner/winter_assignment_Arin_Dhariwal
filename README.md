@@ -100,6 +100,10 @@ python setup_database.py
 ```bash
 python data_generator.py
 ```
+3. **Clear the previously created tables **
+```bash
+python recreate_db.py
+```
 
 ## API Documentation
 
