@@ -68,8 +68,8 @@ merchant_api/
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/yawningwinner/merchant_analysis.git
-cd merchant_analysis
+git clone https://github.com/yawningwinner/winter_assignment_Arin_Dhariwal.git
+cd winter_assignment_Arin_Dhariwal
 ```
 
 2. **Create Virtual Environment**
