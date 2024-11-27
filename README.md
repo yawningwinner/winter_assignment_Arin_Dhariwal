@@ -68,7 +68,7 @@ merchant_api/
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/merchant_analysis.git
+git clone https://github.com/yawningwinner/merchant_analysis.git
 cd merchant_analysis
 ```
 
