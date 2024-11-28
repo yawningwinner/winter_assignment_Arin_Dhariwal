@@ -21,8 +21,8 @@ A real-time transaction monitoring system that detects fraudulent patterns and a
 
 1. **Clone Repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/yawningwinner/winter_assignment_Arin_Dhariwal.git
+   cd winter_assignment_Arin_Dhariwal
    ```
 
 2. **Create Virtual Environment**
