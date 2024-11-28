@@ -101,22 +101,75 @@ A real-time transaction monitoring system that detects fraudulent patterns and a
 
 ## API Documentation
 
-### Merchant Endpoints
-- `GET /api/v1/merchants` - List all merchants (with pagination)
-- `GET /api/v1/merchants/{merchant_id}` - Get merchant details
-- `GET /api/v1/merchants/{merchant_id}/transactions` - Get merchant's transactions
+### Merchant API Endpoints
 
-### Transaction Analysis
-- `GET /api/v1/merchants/{merchant_id}/risk-metrics` - Get merchant risk analysis
-- `POST /api/v1/merchants/{merchant_id}/detect-anomalies` - Run anomaly detection
-- `POST /api/v1/merchants/detect-all-anomalies` - Bulk anomaly detection
+#### 1. Get Merchant Profile
+```http
+GET /api/v1/system/merchants/{merchant_id}
+```
+Retrieves detailed merchant profile including business information, status, and key metrics. Use this endpoint to get a comprehensive view of a merchant's profile and current standing.
 
-### Query Parameters
-- `start_date`: Filter by start date (YYYY-MM-DD)
-- `end_date`: Filter by end date (YYYY-MM-DD)
-- `limit`: Number of records per page
-- `skip`: Number of records to skip
-- `status`: Filter by merchant status
+#### 2. Get Transaction History
+```http
+GET /api/v1/system/merchants/{merchant_id}/transactions
+```
+Fetches paginated transaction history for a specific merchant. Includes detailed transaction data, payment methods, amounts, and statuses. Supports filtering by date range and transaction status.
+
+#### 3. Get Risk Metrics
+```http
+GET /api/v1/system/merchants/{merchant_id}/risk-metrics
+```
+Calculates and returns comprehensive risk metrics for a merchant. This includes:
+- Overall risk score (0-100)
+- Transaction volume analysis
+- Failure rate patterns
+- Velocity checks
+- Historical risk trends
+
+#### 4. Detect Merchant Anomalies
+```http
+POST /api/v1/system/merchants/{merchant_id}/detect-anomalies
+```
+Analyzes a specific merchant's transactions for anomalies using advanced detection algorithms. Identifies unusual patterns in:
+- Transaction amounts
+- Transaction frequency
+- Geographic distribution
+- Time-based patterns
+
+#### 5. List All Merchants
+```http
+GET /api/v1/system/merchants
+```
+Returns a paginated list of all merchants in the system. Includes basic information for each merchant and supports filtering by status, business type, and risk level.
+
+#### 6. Detect All Anomalies
+```http
+POST /api/v1/system/merchants/detect-all-anomalies
+```
+Performs bulk anomaly detection across all merchants. Useful for system-wide monitoring and identifying patterns that might not be visible at individual merchant level.
+
+#### 7. Get Transaction Summary
+```http
+GET /api/v1/system/merchants/{merchant_id}/summary
+```
+Provides aggregated transaction statistics including:
+- Total transaction volume
+- Success/failure rates
+- Average transaction size
+- Peak transaction periods
+- Payment method distribution
+
+#### 8. Get Merchant Timeline
+```http
+GET /api/v1/system/merchants/{merchant_id}/timeline
+```
+Generates a chronological view of merchant activity, showing:
+- Transaction patterns over time
+- Key events and milestones
+- Volume trends
+- Risk score changes
+- Notable incidents
+
 
 ## Testing
 
@@ -127,9 +180,6 @@ pip install pytest pytest-asyncio httpx
 
 # Run all tests
 pytest tests/
-
-# Run with coverage
-pytest --cov=app tests/
 ```
 
 ## Data Management
