@@ -1,30 +1,36 @@
 import logging
-from merchant_api.app.init_db import init_database
-from data_generator import generate_test_data
-from merchant_api.app.db import SessionLocal
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
+from merchant_api.app.models import Base
+from merchant_api.app.db import engine
+from data_generator import DataGenerator
 
+# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def setup_database():
+    """Initialize database schema and populate with test data"""
     try:
-        # Initialize database schema
         logger.info("Initializing database schema...")
-        init_database()
+        # Drop and recreate all tables
+        Base.metadata.drop_all(bind=engine)
+        Base.metadata.create_all(bind=engine)
         
-        # Generate test data
+        # Create a database session
+        Session = sessionmaker(bind=engine)
+        db = Session()
+        
         logger.info("Generating test data...")
-        db = SessionLocal()
-        try:
-            generate_test_data(db)
-        finally:
-            db.close()
-            
+        DataGenerator(db)
+        
         logger.info("Database setup completed successfully!")
         
     except Exception as e:
         logger.error(f"Error during database setup: {str(e)}")
         raise
+    finally:
+        db.close()
 
 if __name__ == "__main__":
     setup_database() 

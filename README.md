@@ -171,60 +171,43 @@ SPIKE_THRESHOLD = 3.0
 
 ### Model Processor (`app/model_processor.py`)
 Handles real-time transaction analysis and fraud detection:
-- Transaction scoring and risk assessment
-- Pattern detection (large amounts, suspicious timing)
-- Batch processing with velocity checks
-- Cached results for performance optimization
-
-```python
-# Example usage
-processor = ModelProcessor()
-result = processor.process_transaction(transaction_data)
-print(result['anomaly_score'])  # 0.75
+```bash
+# Run model processor tests
+python test_model.py
 ```
 
 ### Data Processing (`app/processing.py`)
 Manages transaction data analysis and reporting:
-- Transaction summarization and metrics
-- Risk scoring and trend analysis
-- Timeline generation for significant events
-- Location-based risk assessment
+```bash
+# Run data processing tests
+# Default: analyzes 5 merchants
+python test_processing.py
 
-```python
-# Example usage
-processor = DataProcessor(db_session)
-metrics = processor.calculate_risk_metrics(merchant_id)
-print(metrics['risk_score'])  # 65.4
+# Analyze specific number of merchants
+python test_processing.py --limit 10
 ```
 
-### Data Models (`app/models.py`)
-SQLAlchemy models defining the database schema:
-- Merchant information
-- Transaction records
-- Relationship mappings
-- Audit trails
-
-### Data Schemas (`app/schemas.py`)
-Pydantic models for data validation and serialization:
-- `MerchantProfile`: Merchant details and registration
-- `TransactionHistory`: Transaction records with anomaly flags
-- `RiskMetrics`: Risk scoring and pattern analysis
-- `AnomalyResponse`: Anomaly detection results
+### Data Models (`app/models.py`) and Schemas (`app/schemas.py`)
+Database models and data validation schemas:
+```bash
+# Run schema validation tests
+python test_schemas.py --limit 10
+```
 
 ### Validation (`app/validation.py`)
 Input validation and data integrity:
-- Transaction data validation
-- Merchant information validation
-- Business rule enforcement
-- Format and constraint checking
+```bash
+# Run validation tests
+python test_validation.py --limit 10
+```
 
-```python
-# Example validation
-validator = TransactionValidator(
-    transaction_id="TX123",
-    amount=500.00,
-    # ... other fields
-)
+### Test All Modules
+```bash
+# Run all test files
+python test_model.py
+python test_processing.py
+python test_schemas.py
+python test_validation.py
 ```
 
 ## Project Structure

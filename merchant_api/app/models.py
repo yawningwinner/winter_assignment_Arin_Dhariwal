@@ -42,31 +42,16 @@ class Merchant(Base):
 class Transaction(Base):
     __tablename__ = "transactions"
 
-    id = Column(Integer, primary_key=True, index=True)
-    transaction_id = Column(String, unique=True, index=True)
+    transaction_id = Column(String, primary_key=True)
     merchant_id = Column(String, ForeignKey("merchants.merchant_id"))
     timestamp = Column(DateTime)
     amount = Column(Float)
-    
-    # Customer Info
     customer_id = Column(String)
     device_id = Column(String)
     customer_location = Column(String)
-    
-    # Transaction Details
     payment_method = Column(String)
     status = Column(String)
     product_category = Column(String)
     platform = Column(String)
-    
-    # Risk Indicators
-    velocity_flag = Column(Boolean, default=False)
-    amount_flag = Column(Boolean, default=False)
-    time_flag = Column(Boolean, default=False)
-    device_flag = Column(Boolean, default=False)
-    
-    # Anomaly Detection Fields
-    is_anomaly = Column(Boolean, default=False)
-    anomaly_reasons = Column(String, nullable=True)
 
     merchant = relationship("Merchant", back_populates="transactions")

@@ -15,15 +15,24 @@ from merchant_api.app.cache import cached
 from merchant_api.app.events import event_processor, EventType, EventPriority
 from merchant_api.app.model_processor import ModelProcessor
 import logging
+import numpy as np
+from sqlalchemy import func
 
-router = APIRouter()
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Use a single prefix for all merchant-related endpoints
+router = APIRouter(
+    prefix="/api/v1/system/merchants",
+    tags=["merchants"]
+)
 
 # Initialize processors
 model_processor = ModelProcessor()
 
 # Merchant Profile Endpoints
-@router.get("/merchants/{merchant_id}", response_model=MerchantProfile)
+@router.get("/{merchant_id}", response_model=MerchantProfile)
 async def get_merchant_profile(
     merchant_id: str,
     db: Session = Depends(get_db)
@@ -41,7 +50,7 @@ async def get_merchant_profile(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 # Transaction History Endpoints
-@router.get("/merchants/{merchant_id}/transactions", response_model=List[TransactionHistory])
+@router.get("/{merchant_id}/transactions", response_model=List[TransactionHistory])
 async def get_transaction_history(
     merchant_id: str,
     start_date: Optional[datetime] = Query(None, description="Start date (YYYY-MM-DD)"),
@@ -77,73 +86,196 @@ async def get_transaction_history(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 # Risk Metrics Endpoints
-@router.get("/merchants/{merchant_id}/risk-metrics", response_model=RiskMetrics)
-async def get_risk_metrics(
-    merchant_id: str,
-    time_window: int = Query(30, gt=0, le=365, description="Time window in days"),
-    db: Session = Depends(get_db)
-):
-    """Get merchant risk metrics and statistics"""
-    try:
-        # Verify merchant exists
-        merchant = db.query(Merchant).filter(Merchant.merchant_id == merchant_id).first()
-        if not merchant:
-            raise HTTPException(status_code=404, detail=f"Merchant {merchant_id} not found")
-
-        start_date = datetime.now() - timedelta(days=time_window)
-        
-        # Get transaction metrics
-        total_txns = db.query(Transaction).filter(
-            Transaction.merchant_id == merchant_id,
-            Transaction.timestamp >= start_date
-        ).count()
-        
-        anomaly_txns = db.query(Transaction).filter(
-            Transaction.merchant_id == merchant_id,
-            Transaction.timestamp >= start_date,
-            Transaction.is_anomaly == True
-        ).count()
-        
-        # Calculate risk score (basic implementation)
-        risk_score = (anomaly_txns / total_txns * 100) if total_txns > 0 else 0
-        
-        # Get pattern distribution
-        pattern_counts: Dict[str, int] = {}
-        anomalies = db.query(Transaction).filter(
-            Transaction.merchant_id == merchant_id,
-            Transaction.timestamp >= start_date,
-            Transaction.is_anomaly == True
-        ).all()
-        
-        for tx in anomalies:
-            if tx.anomaly_reasons:
-                for pattern in tx.anomaly_reasons.split(","):
-                    pattern_counts[pattern] = pattern_counts.get(pattern, 0) + 1
-        
-        return {
-            "merchant_id": merchant_id,
-            "risk_score": risk_score,
-            "total_transactions": total_txns,
-            "anomalous_transactions": anomaly_txns,
-            "pattern_distribution": pattern_counts,
-            "time_window_days": time_window,
-            "last_updated": datetime.now()
-        }
-    except HTTPException as he:
-        raise he
-    except Exception as e:
-        logger.error(f"Error calculating risk metrics: {str(e)}")
-        raise HTTPException(status_code=500, detail="Internal server error")
-
-# Anomaly Detection Endpoint
-@router.post("/merchants/{merchant_id}/detect-anomalies", response_model=AnomalyResponse)
-async def detect_anomalies(
+@router.get("/{merchant_id}/risk-metrics")
+async def get_merchant_risk_metrics(
     merchant_id: str,
     start_date: Optional[datetime] = Query(None),
     end_date: Optional[datetime] = Query(None),
     db: Session = Depends(get_db)
 ):
-    """Run anomaly detection on merchant transactions"""
+    try:
+        logger.info(f"Calculating risk metrics for merchant {merchant_id}")
+        
+        # Validate merchant exists
+        merchant = db.query(Merchant).filter(Merchant.merchant_id == merchant_id).first()
+        if not merchant:
+            logger.warning(f"Merchant not found: {merchant_id}")
+            raise HTTPException(status_code=404, detail="Merchant not found")
+
+        # Build query for transactions
+        query = db.query(Transaction).filter(Transaction.merchant_id == merchant_id)
+        
+        if start_date:
+            query = query.filter(Transaction.timestamp >= start_date)
+        if end_date:
+            query = query.filter(Transaction.timestamp <= end_date)
+        
+        # Execute query and log count
+        transactions = query.all()
+        logger.info(f"Found {len(transactions)} transactions for analysis")
+        
+        if not transactions:
+            logger.info(f"No transactions found for merchant {merchant_id}")
+            return {
+                "merchant_id": merchant_id,
+                "risk_score": 0,
+                "total_transactions": 0,
+                "metrics": {
+                    "anomaly_rate": 0,
+                    "failure_rate": 0,
+                    "average_transaction_amount": 0,
+                    "transaction_volume": 0
+                },
+                "time_period": {
+                    "start_date": start_date,
+                    "end_date": end_date
+                }
+            }
+
+        # Calculate basic metrics
+        total_transactions = len(transactions)
+        anomalous_transactions = sum(1 for t in transactions if getattr(t, 'is_anomaly', False))
+        failed_transactions = sum(1 for t in transactions if t.status == 'failed')
+        
+        # Calculate amounts safely
+        amounts = [float(t.amount) for t in transactions if t.amount is not None]
+        avg_amount = sum(amounts) / len(amounts) if amounts else 0
+        
+        # Calculate rates
+        anomaly_rate = (anomalous_transactions / total_transactions * 100) if total_transactions > 0 else 0
+        failure_rate = (failed_transactions / total_transactions * 100) if total_transactions > 0 else 0
+        
+        # Calculate time period
+        actual_start_date = start_date or min(t.timestamp for t in transactions)
+        actual_end_date = end_date or max(t.timestamp for t in transactions)
+        days_diff = max(1, (actual_end_date - actual_start_date).days)
+        
+        daily_volume = total_transactions / days_diff
+        
+        # Calculate risk score with bounds checking
+        volume_factor = min(1, daily_volume / 1000)
+        amount_factor = min(1, avg_amount / 10000)
+        
+        risk_score = (
+            (anomaly_rate * 0.4) +
+            (failure_rate * 0.3) +
+            (volume_factor * 20) +
+            (amount_factor * 10)
+        )
+        
+        risk_score = max(0, min(100, risk_score))
+        
+        logger.info(f"Successfully calculated risk metrics for merchant {merchant_id}")
+        
+        return {
+            "merchant_id": merchant_id,
+            "risk_score": round(risk_score, 2),
+            "total_transactions": total_transactions,
+            "metrics": {
+                "anomaly_rate": round(anomaly_rate, 2),
+                "failure_rate": round(failure_rate, 2),
+                "average_transaction_amount": round(avg_amount, 2),
+                "transaction_volume": round(daily_volume, 2)
+            },
+            "time_period": {
+                "start_date": actual_start_date,
+                "end_date": actual_end_date
+            }
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error calculating risk metrics for merchant {merchant_id}: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error calculating risk metrics: {str(e)}"
+        )
+
+# Create shared anomaly detection function
+def detect_anomalies(transactions: List[Transaction], 
+                    time_window_minutes: int = 60,
+                    amount_threshold: float = 2.0,
+                    volume_threshold: float = 2.0) -> List[Dict]:
+    """
+    Core anomaly detection logic used by both single-merchant and all-merchant endpoints.
+    
+    Args:
+        transactions: List of transactions to analyze
+        time_window_minutes: Size of the sliding window in minutes
+        amount_threshold: Number of standard deviations for amount anomalies
+        volume_threshold: Number of standard deviations for volume anomalies
+    """
+    if not transactions:
+        return []
+
+    # Sort transactions by timestamp
+    sorted_txns = sorted(transactions, key=lambda x: x.timestamp)
+    
+    # Initialize results
+    anomalies = []
+    window_size = timedelta(minutes=time_window_minutes)
+    
+    # Calculate baseline metrics
+    all_amounts = [t.amount for t in transactions]
+    baseline_mean_amount = np.mean(all_amounts)
+    baseline_std_amount = np.std(all_amounts)
+    
+    # Analyze each transaction
+    for i, txn in enumerate(sorted_txns):
+        window_start = txn.timestamp - window_size
+        window_end = txn.timestamp
+        
+        # Get transactions in current window
+        window_txns = [
+            t for t in sorted_txns[max(0, i-100):i+1]  # Use last 100 txns for efficiency
+            if window_start <= t.timestamp <= window_end
+        ]
+        
+        # Skip if not enough data
+        if len(window_txns) < 5:
+            continue
+            
+        # Calculate window metrics
+        window_amounts = [t.amount for t in window_txns]
+        window_mean = np.mean(window_amounts)
+        window_std = np.std(window_amounts)
+        
+        # Volume anomaly detection
+        expected_volume = len(window_txns) / (time_window_minutes / 60)  # transactions per hour
+        actual_volume = len([t for t in window_txns if t.timestamp >= window_end - timedelta(hours=1)])
+        
+        volume_zscore = (actual_volume - expected_volume) / (np.sqrt(expected_volume) + 1e-6)
+        amount_zscore = (txn.amount - window_mean) / (window_std + 1e-6)
+        
+        # Check for anomalies
+        anomaly_types = []
+        if abs(amount_zscore) > amount_threshold:
+            anomaly_types.append("amount")
+        if abs(volume_zscore) > volume_threshold:
+            anomaly_types.append("volume")
+            
+        if anomaly_types:
+            anomalies.append({
+                "transaction_id": txn.transaction_id,
+                "merchant_id": txn.merchant_id,
+                "timestamp": txn.timestamp,
+                "amount": txn.amount,
+                "anomaly_types": anomaly_types,
+                "amount_zscore": round(float(amount_zscore), 2),
+                "volume_zscore": round(float(volume_zscore), 2)
+            })
+    
+    return anomalies
+
+# Update individual endpoint
+@router.post("/{merchant_id}/detect-anomalies")
+async def detect_merchant_anomalies_endpoint(
+    merchant_id: str,
+    start_date: Optional[datetime] = Query(None),
+    end_date: Optional[datetime] = Query(None),
+    db: Session = Depends(get_db)
+):
     try:
         # Get transactions
         query = db.query(Transaction).filter(Transaction.merchant_id == merchant_id)
@@ -152,47 +284,29 @@ async def detect_anomalies(
         if end_date:
             query = query.filter(Transaction.timestamp <= end_date)
         
-        transactions = query.all()
+        transactions = query.order_by(Transaction.timestamp).all()
         
-        # Process transactions through model
-        results = model_processor.process_batch([
-            {
-                "transaction_id": tx.transaction_id,
-                "merchant_id": tx.merchant_id,
-                "amount": tx.amount,
-                "timestamp": tx.timestamp,
-                "customer_id": tx.customer_id,
-                "customer_location": tx.customer_location
-            }
-            for tx in transactions
-        ])
+        # Use shared detection logic
+        anomalies = detect_anomalies(transactions)
         
-        # Aggregate results
-        anomaly_count = sum(1 for r in results if r["anomaly_score"] > 0.7)
-        patterns = {}
-        details = []
+        # Update transaction records
+        for anomaly in anomalies:
+            txn = db.query(Transaction).filter(
+                Transaction.transaction_id == anomaly['transaction_id']
+            ).first()
+            if txn:
+                txn.is_anomaly = True
+                txn.anomaly_reasons = ",".join(anomaly['anomaly_types'])
         
-        for tx, result in zip(transactions, results):
-            if result["anomaly_score"] > 0.7:
-                # Update pattern counts
-                for pattern in result["pattern_match"]:
-                    patterns[pattern] = patterns.get(pattern, 0) + 1
-                
-                # Add to details
-                details.append({
-                    "transaction_id": tx.transaction_id,
-                    "timestamp": tx.timestamp,
-                    "amount": tx.amount,
-                    "patterns": result["pattern_match"]
-                })
+        db.commit()
         
-        return AnomalyResponse(
-            merchant_id=merchant_id,
-            total_processed=len(transactions),
-            anomalies_detected=anomaly_count,
-            patterns=patterns,
-            details=details
-        )
+        return {
+            "merchant_id": merchant_id,
+            "total_processed": len(transactions),
+            "anomalies_detected": len(anomalies),
+            "details": anomalies
+        }
+        
     except Exception as e:
         logger.error(f"Error detecting anomalies: {str(e)}")
         raise HTTPException(
@@ -201,7 +315,7 @@ async def detect_anomalies(
         )
 
 # Add this new endpoint at the top of the file
-@router.get("/merchants", response_model=List[MerchantProfile])
+@router.get("/", response_model=List[MerchantProfile])
 async def get_all_merchants(
     skip: int = Query(0, ge=0, description="Skip first N records"),
     limit: int = Query(100, ge=1, le=1000, description="Limit number of records returned"),
@@ -230,15 +344,14 @@ async def get_all_merchants(
             detail="Internal server error while fetching merchants"
         )
 
-# Add this new endpoint
-@router.post("/merchants/detect-all-anomalies", response_model=List[AnomalyResponse])
-async def detect_all_anomalies(
-    start_date: Optional[datetime] = Query(None, description="Start date (YYYY-MM-DD)"),
-    end_date: Optional[datetime] = Query(None, description="End date (YYYY-MM-DD)"),
-    merchant_limit: int = Query(100, ge=1, le=1000, description="Maximum number of merchants to process"),
+# Update bulk endpoint
+@router.post("/detect-all-anomalies")
+async def detect_all_anomalies_endpoint(
+    start_date: Optional[datetime] = Query(None),
+    end_date: Optional[datetime] = Query(None),
+    merchant_limit: int = Query(100, ge=1, le=1000),
     db: Session = Depends(get_db)
 ):
-    """Run anomaly detection on all merchants' transactions"""
     try:
         # Get all active merchants
         merchants = db.query(Merchant)\
@@ -251,7 +364,7 @@ async def detect_all_anomalies(
 
         all_results = []
         
-        # Process each merchant
+        # Process each merchant using the same detection logic
         for merchant in merchants:
             # Get transactions for analysis
             query = db.query(Transaction)\
@@ -267,53 +380,25 @@ async def detect_all_anomalies(
             if not transactions:
                 continue
 
-            # Process transactions for anomalies
-            anomaly_details = []
-            pattern_counts = {}
-            anomaly_count = 0
-
-            for txn in transactions:
-                patterns = []
-                
-                # Large amount check
-                if txn.amount > 10000:
-                    patterns.append("large_amount")
-                
-                # Late night check
-                if txn.timestamp.hour >= 23 or txn.timestamp.hour <= 4:
-                    patterns.append("late_night")
-                
-                # Suspicious round amounts
-                if txn.amount.is_integer() and txn.amount >= 1000:
-                    patterns.append("round_amount")
-                
-                # Update transaction if anomalies found
-                if patterns:
-                    anomaly_count += 1
-                    txn.is_anomaly = True
-                    txn.anomaly_reasons = ",".join(patterns)
-                    
-                    # Update pattern counts
-                    for pattern in patterns:
-                        pattern_counts[pattern] = pattern_counts.get(pattern, 0) + 1
-                    
-                    # Add to details
-                    anomaly_details.append(AnomalyDetail(
-                        transaction_id=txn.transaction_id,
-                        timestamp=txn.timestamp,
-                        amount=txn.amount,
-                        patterns=patterns
-                    ))
+            # Use shared detection logic
+            anomalies = detect_anomalies(transactions)
             
-            # Add results for this merchant
-            if anomaly_count > 0:
-                all_results.append(AnomalyResponse(
-                    merchant_id=merchant.merchant_id,
-                    total_processed=len(transactions),
-                    anomalies_detected=anomaly_count,
-                    patterns=pattern_counts,
-                    details=anomaly_details
-                ))
+            # Update transaction records
+            for anomaly in anomalies:
+                txn = db.query(Transaction).filter(
+                    Transaction.transaction_id == anomaly['transaction_id']
+                ).first()
+                if txn:
+                    txn.is_anomaly = True
+                    txn.anomaly_reasons = ",".join(anomaly['anomaly_types'])
+            
+            if anomalies:  # Only include merchants with anomalies
+                all_results.append({
+                    "merchant_id": merchant.merchant_id,
+                    "total_processed": len(transactions),
+                    "anomalies_detected": len(anomalies),
+                    "details": anomalies
+                })
         
         # Commit all changes
         db.commit()
@@ -328,7 +413,7 @@ async def detect_all_anomalies(
             detail=f"Internal server error while detecting anomalies: {str(e)}"
         )
 
-@router.get("/merchants/{merchant_id}/summary", response_model=Dict)
+@router.get("/{merchant_id}/summary", response_model=Dict)
 async def get_transaction_summary(
     merchant_id: str,
     start_date: Optional[datetime] = Query(None),
@@ -347,45 +432,283 @@ async def get_transaction_summary(
             detail="Error generating transaction summary"
         )
 
-@router.get("/merchants/{merchant_id}/timeline", response_model=List[Dict])
+@router.get("/{merchant_id}/timeline")
 async def get_merchant_timeline(
     merchant_id: str,
-    days: int = Query(30, ge=1, le=365),
+    start_date: Optional[datetime] = Query(None),
+    end_date: Optional[datetime] = Query(None),
+    interval: str = Query("hour", description="Aggregation interval: hour, day, or week"),
     db: Session = Depends(get_db)
 ):
-    """Get timeline of significant events"""
     try:
-        processor = DataProcessor(db)
-        timeline = processor.generate_timeline(merchant_id, days)
-        return timeline
+        logger.info(f"Generating timeline for merchant {merchant_id}")
+        
+        # Validate merchant exists
+        merchant = db.query(Merchant).filter(Merchant.merchant_id == merchant_id).first()
+        if not merchant:
+            logger.warning(f"Merchant not found: {merchant_id}")
+            raise HTTPException(status_code=404, detail="Merchant not found")
+
+        # Build base query
+        query = db.query(Transaction).filter(Transaction.merchant_id == merchant_id)
+        
+        # Apply date filters if provided
+        if start_date:
+            query = query.filter(Transaction.timestamp >= start_date)
+        if end_date:
+            query = query.filter(Transaction.timestamp <= end_date)
+            
+        # Get all transactions
+        transactions = query.order_by(Transaction.timestamp).all()
+        
+        if not transactions:
+            logger.info(f"No transactions found for merchant {merchant_id}")
+            return {
+                "merchant_id": merchant_id,
+                "timeline": [],
+                "summary": {
+                    "total_transactions": 0,
+                    "total_amount": 0,
+                    "anomalies_detected": 0
+                }
+            }
+
+        # Determine time buckets based on interval
+        def get_bucket_key(timestamp):
+            if interval == "hour":
+                return timestamp.replace(minute=0, second=0, microsecond=0)
+            elif interval == "day":
+                return timestamp.replace(hour=0, minute=0, second=0, microsecond=0)
+            else:  # week
+                return timestamp - timedelta(days=timestamp.weekday())
+
+        # Group transactions by time bucket
+        timeline_data = {}
+        for txn in transactions:
+            bucket = get_bucket_key(txn.timestamp)
+            
+            if bucket not in timeline_data:
+                timeline_data[bucket] = {
+                    "timestamp": bucket,
+                    "transaction_count": 0,
+                    "total_amount": 0,
+                    "successful_transactions": 0,
+                    "failed_transactions": 0,
+                    "anomalous_transactions": 0,
+                    "average_amount": 0
+                }
+            
+            data = timeline_data[bucket]
+            data["transaction_count"] += 1
+            data["total_amount"] += float(txn.amount)
+            
+            if txn.status == "success":
+                data["successful_transactions"] += 1
+            elif txn.status == "failed":
+                data["failed_transactions"] += 1
+                
+            if getattr(txn, 'is_anomaly', False):
+                data["anomalous_transactions"] += 1
+                
+            data["average_amount"] = data["total_amount"] / data["transaction_count"]
+
+        # Convert to list and sort by timestamp
+        timeline = [
+            {
+                "timestamp": str(k),
+                "transaction_count": v["transaction_count"],
+                "total_amount": round(v["total_amount"], 2),
+                "successful_transactions": v["successful_transactions"],
+                "failed_transactions": v["failed_transactions"],
+                "anomalous_transactions": v["anomalous_transactions"],
+                "average_amount": round(v["average_amount"], 2)
+            }
+            for k, v in timeline_data.items()
+        ]
+        timeline.sort(key=lambda x: x["timestamp"])
+
+        # Calculate summary statistics
+        total_transactions = len(transactions)
+        total_amount = sum(float(t.amount) for t in transactions)
+        total_anomalies = sum(1 for t in transactions if getattr(t, 'is_anomaly', False))
+
+        logger.info(f"Successfully generated timeline for merchant {merchant_id}")
+        
+        return {
+            "merchant_id": merchant_id,
+            "timeline": timeline,
+            "summary": {
+                "total_transactions": total_transactions,
+                "total_amount": round(total_amount, 2),
+                "anomalies_detected": total_anomalies
+            }
+        }
+
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Error generating timeline: {str(e)}")
+        logger.error(f"Error generating timeline for merchant {merchant_id}: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500,
-            detail="Error generating timeline"
+            detail=f"Error generating timeline: {str(e)}"
         )
 
-# Add new endpoint for events
-@router.get("/events", response_model=List[Dict])
-async def get_system_events(
-    event_type: Optional[str] = Query(None, description="Filter by event type"),
-    priority: Optional[str] = Query(None, description="Filter by priority"),
-    limit: int = Query(100, ge=1, le=1000)
+def detect_merchant_anomalies(db: Session, merchant_id: str) -> List[Dict]:
+    """Detect anomalies for a specific merchant"""
+    # Get merchant transactions for last 24 hours
+    end_time = datetime.now()
+    start_time = end_time - timedelta(hours=24)
+    
+    transactions = (db.query(Transaction)
+                   .filter(Transaction.merchant_id == merchant_id)
+                   .filter(Transaction.timestamp.between(start_time, end_time))
+                   .order_by(Transaction.timestamp)
+                   .all())
+    
+    return detect_anomalies(transactions)
+
+def detect_all_merchant_anomalies(db: Session) -> Dict[str, List[Dict]]:
+    """Detect anomalies for all merchants"""
+    # Get all transactions for last 24 hours
+    end_time = datetime.now()
+    start_time = end_time - timedelta(hours=24)
+    
+    transactions = (db.query(Transaction)
+                   .filter(Transaction.timestamp.between(start_time, end_time))
+                   .order_by(Transaction.timestamp)
+                   .all())
+    
+    # Group transactions by merchant
+    merchant_transactions = {}
+    for txn in transactions:
+        if txn.merchant_id not in merchant_transactions:
+            merchant_transactions[txn.merchant_id] = []
+        merchant_transactions[txn.merchant_id].append(txn)
+    
+    # Detect anomalies for each merchant
+    all_anomalies = {}
+    for merchant_id, merchant_txns in merchant_transactions.items():
+        anomalies = detect_anomalies(merchant_txns)
+        if anomalies:  # Only include merchants with anomalies
+            all_anomalies[merchant_id] = anomalies
+            
+    return all_anomalies
+
+@router.get("/{merchant_id}/events")
+async def get_merchant_events(
+    merchant_id: str,
+    start_date: Optional[datetime] = Query(None),
+    end_date: Optional[datetime] = Query(None),
+    event_types: List[str] = Query(["anomaly", "high_volume", "failure_spike"], description="Types of events to include"),
+    db: Session = Depends(get_db)
 ):
-    """Get system events with optional filtering"""
     try:
-        event_type_enum = EventType(event_type) if event_type else None
-        priority_enum = EventPriority(priority) if priority else None
+        logger.info(f"Fetching events for merchant {merchant_id}")
         
-        events = event_processor.get_events(
-            event_type=event_type_enum,
-            priority=priority_enum,
-            limit=limit
-        )
-        return events
+        # Validate merchant exists
+        merchant = db.query(Merchant).filter(Merchant.merchant_id == merchant_id).first()
+        if not merchant:
+            raise HTTPException(status_code=404, detail="Merchant not found")
+
+        # Build query
+        query = db.query(Transaction).filter(Transaction.merchant_id == merchant_id)
+        if start_date:
+            query = query.filter(Transaction.timestamp >= start_date)
+        if end_date:
+            query = query.filter(Transaction.timestamp <= end_date)
+            
+        transactions = query.order_by(Transaction.timestamp).all()
+        
+        if not transactions:
+            return {
+                "merchant_id": merchant_id,
+                "total_events": 0,
+                "events": []
+            }
+
+        events = []
+        window_size = timedelta(hours=1)
+        
+        # Group transactions into hourly windows
+        windows = {}
+        for txn in transactions:
+            window_start = txn.timestamp.replace(minute=0, second=0, microsecond=0)
+            if window_start not in windows:
+                windows[window_start] = []
+            windows[window_start].append(txn)
+
+        # Analyze each window for events
+        for window_start, window_txns in windows.items():
+            window_end = window_start + window_size
+            
+            # Calculate window metrics
+            total_txns = len(window_txns)
+            if total_txns == 0:
+                continue
+                
+            failed_txns = sum(1 for t in window_txns if t.status == 'failed')
+            anomalous_txns = sum(1 for t in window_txns if getattr(t, 'is_anomaly', False))
+            total_amount = sum(float(t.amount) for t in window_txns)
+            
+            # Check for different types of events
+            if "anomaly" in event_types and anomalous_txns > 0:
+                events.append({
+                    "type": "anomaly",
+                    "timestamp": window_start,
+                    "details": {
+                        "anomalous_transactions": anomalous_txns,
+                        "total_transactions": total_txns,
+                        "anomaly_rate": round(anomalous_txns / total_txns * 100, 2)
+                    },
+                    "severity": "high" if anomalous_txns / total_txns > 0.1 else "medium"
+                })
+
+            if "high_volume" in event_types and total_txns > 100:  # Threshold can be adjusted
+                events.append({
+                    "type": "high_volume",
+                    "timestamp": window_start,
+                    "details": {
+                        "transaction_count": total_txns,
+                        "total_amount": round(total_amount, 2),
+                        "average_amount": round(total_amount / total_txns, 2)
+                    },
+                    "severity": "high" if total_txns > 200 else "medium"
+                })
+
+            if "failure_spike" in event_types and failed_txns > 0:
+                failure_rate = failed_txns / total_txns
+                if failure_rate > 0.05:  # 5% threshold
+                    events.append({
+                        "type": "failure_spike",
+                        "timestamp": window_start,
+                        "details": {
+                            "failed_transactions": failed_txns,
+                            "total_transactions": total_txns,
+                            "failure_rate": round(failure_rate * 100, 2)
+                        },
+                        "severity": "high" if failure_rate > 0.1 else "medium"
+                    })
+
+        # Sort events by timestamp
+        events.sort(key=lambda x: x["timestamp"])
+        
+        logger.info(f"Found {len(events)} events for merchant {merchant_id}")
+        
+        return {
+            "merchant_id": merchant_id,
+            "total_events": len(events),
+            "events": events,
+            "time_period": {
+                "start": start_date or min(t.timestamp for t in transactions),
+                "end": end_date or max(t.timestamp for t in transactions)
+            }
+        }
+
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Error fetching events: {str(e)}")
+        logger.error(f"Error fetching events for merchant {merchant_id}: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=500,
-            detail="Error fetching system events"
+            detail=f"Error fetching merchant events: {str(e)}"
         )
