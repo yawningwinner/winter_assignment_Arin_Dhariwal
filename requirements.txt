@@ -1,7 +1,12 @@
 fastapi
-uvicorn
 sqlalchemy
-psycopg2-binary
 pydantic
 pydantic-settings
-python-dotenv 
+pytest
+numpy
+pandas
+uvicorn
+psycopg2-binary
+pytest-asyncio
+httpx
+pytest-cov

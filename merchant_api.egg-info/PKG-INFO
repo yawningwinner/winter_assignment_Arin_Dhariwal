@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: merchant_api
+Version: 0.1
+Requires-Dist: fastapi
+Requires-Dist: sqlalchemy
+Requires-Dist: pydantic
+Requires-Dist: pytest
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: uvicorn
