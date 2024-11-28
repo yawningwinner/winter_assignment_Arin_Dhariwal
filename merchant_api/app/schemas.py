@@ -47,10 +47,18 @@ class TransactionBase(BaseModel):
 class TransactionCreate(TransactionBase):
     pass
 
-class TransactionHistory(TransactionBase):
+class TransactionHistory(BaseModel):
     transaction_id: str
     merchant_id: str
+    amount: float
     timestamp: datetime
+    status: str
+    platform: str
+    customer_id: str = "unknown"
+    device_id: str = "unknown"
+    customer_location: str = "unknown"
+    payment_method: str = "unknown"
+    product_category: str = "unknown"
     is_anomaly: bool = False
     anomaly_reasons: Optional[str] = None
 

@@ -60,6 +60,8 @@ async def get_transaction_history(
 ):
     """Get merchant's transaction history with optional date filtering"""
     try:
+        logger.info(f"Fetching transactions for merchant {merchant_id}")
+        
         # Verify merchant exists
         merchant = db.query(Merchant).filter(Merchant.merchant_id == merchant_id).first()
         if not merchant:
@@ -73,16 +75,37 @@ async def get_transaction_history(
         if end_date:
             query = query.filter(Transaction.timestamp <= end_date)
         
+        # Execute query and get results
         transactions = query.order_by(Transaction.timestamp.desc()).limit(limit).all()
         
-        if not transactions:
-            return []
+        # Convert to TransactionHistory format
+        transaction_histories = []
+        for txn in transactions:
+            transaction_history = {
+                "transaction_id": txn.transaction_id,
+                "merchant_id": txn.merchant_id,
+                "amount": txn.amount,
+                "timestamp": txn.timestamp,
+                "status": txn.status,
+                "platform": txn.platform or "unknown",
+                "customer_id": getattr(txn, 'customer_id', "unknown"),
+                "device_id": getattr(txn, 'device_id', "unknown"),
+                "customer_location": getattr(txn, 'customer_location', "unknown"),
+                "payment_method": getattr(txn, 'payment_method', "unknown"),
+                "product_category": getattr(txn, 'product_category', "unknown"),
+                "is_anomaly": getattr(txn, 'is_anomaly', False),
+                "anomaly_reasons": getattr(txn, 'anomaly_reasons', None)
+            }
+            transaction_histories.append(transaction_history)
             
-        return transactions
+        logger.info(f"Found {len(transaction_histories)} transactions for merchant {merchant_id}")
+        
+        return transaction_histories
+        
     except HTTPException as he:
         raise he
     except Exception as e:
-        logger.error(f"Error fetching transaction history: {str(e)}")
+        logger.error(f"Error fetching transaction history: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Internal server error")
 
 # Risk Metrics Endpoints
