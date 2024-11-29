@@ -57,9 +57,9 @@ def test_schemas(limit=5):
                     status=tx.status,
                     product_category=tx.product_category,
                     platform=tx.platform,
-                    timestamp=tx.timestamp,
-                    is_anomaly=tx.is_anomaly,
-                    anomaly_reasons=tx.anomaly_reasons
+                    timestamp=tx.timestamp
+                    # is_anomaly=tx.is_anomaly,
+                    # anomaly_reasons=tx.anomaly_reasons
                 )
                 print(f"✓ Valid Transaction History: {history.transaction_id}")
                 print(f"  Amount: ${history.amount:.2f}")

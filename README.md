@@ -50,45 +50,11 @@ A real-time transaction monitoring system that detects fraudulent patterns and a
    \q
    ```
 
-5. **System Initialization**
-   - **1. Database Setup (`setup_database.py`)**
-     Handles initial database schema creation and setup:
-     ```bash
-     python setup_database.py
-     ```
-
-     This script:
-     - Creates required database tables:
-       - `merchants`: Merchant profiles and details
-       - `transactions`: Transaction records and metadata
-       - `audit_logs`: System audit trails
-     - Sets up indexes for performance optimization
-     - Establishes foreign key relationships
-     - Creates necessary constraints
-     - Initializes lookup tables (if any)
-
-   - **2. Data Generation (`data_generator.py`)**
-     After schema setup, generates test data:
+5. **Data Generation**
+   Generates test data:
      ```bash
      python data_generator.py
      ```
-
-   - **3. Database Recreation (`recreate_db.py`)**
-     For resetting the system to a clean state:
-     ```bash
-     python recreate_db.py
-     ```
-
-   The initialization sequence should be:
-   ```bash
-   # 1. First-time setup
-   python setup_database.py
-   python data_generator.py
-
-   # Or for a clean restart
-   python recreate_db.py
-   python data_generator.py
-   ```
 
 6. **Start API Server**
    ```bash
@@ -103,72 +69,150 @@ A real-time transaction monitoring system that detects fraudulent patterns and a
 
 ### Merchant API Endpoints
 
-#### 1. Get Merchant Profile
+#### 1. Get All Merchants
 ```http
-GET /api/v1/system/merchants/{merchant_id}
+GET /api/Arinki/merchants/
 ```
-Retrieves detailed merchant profile including business information, status, and key metrics. Use this endpoint to get a comprehensive view of a merchant's profile and current standing.
 
-#### 2. Get Transaction History
-```http
-GET /api/v1/system/merchants/{merchant_id}/transactions
-```
-Fetches paginated transaction history for a specific merchant. Includes detailed transaction data, payment methods, amounts, and statuses. Supports filtering by date range and transaction status.
+Returns a list of all merchants in the system with their basic information and current status.
 
-#### 3. Get Risk Metrics
+#### 2. Get Merchant Profile
 ```http
-GET /api/v1/system/merchants/{merchant_id}/risk-metrics
+GET /api/Arinki/merchants/{merchant_id}
 ```
-Calculates and returns comprehensive risk metrics for a merchant. This includes:
-- Overall risk score (0-100)
-- Transaction volume analysis
-- Failure rate patterns
-- Velocity checks
-- Historical risk trends
 
-#### 4. Detect Merchant Anomalies
-```http
-POST /api/v1/system/merchants/{merchant_id}/detect-anomalies
-```
-Analyzes a specific merchant's transactions for anomalies using advanced detection algorithms. Identifies unusual patterns in:
-- Transaction amounts
-- Transaction frequency
-- Geographic distribution
-- Time-based patterns
+Retrieves detailed merchant profile including business information, registration details, and current status.
 
-#### 5. List All Merchants
+#### 3. Create Merchant
 ```http
-GET /api/v1/system/merchants
+POST /api/Arinki/merchants/
 ```
-Returns a paginated list of all merchants in the system. Includes basic information for each merchant and supports filtering by status, business type, and risk level.
 
-#### 6. Detect All Anomalies
-```http
-POST /api/v1/system/merchants/detect-all-anomalies
-```
-Performs bulk anomaly detection across all merchants. Useful for system-wide monitoring and identifying patterns that might not be visible at individual merchant level.
+Creates a new merchant in the system. Requires merchant details including business name, type, and location.
 
-#### 7. Get Transaction Summary
-```http
-GET /api/v1/system/merchants/{merchant_id}/summary
+**Request Body:**
+```json
+{
+    "merchant_id": "M0001",
+    "business_name": "Example Business",
+    "business_type": "retail",
+    "business_model": "b2c",
+    "city": "New York",
+    "state": "NY",
+    "status": "active"
+}
 ```
-Provides aggregated transaction statistics including:
-- Total transaction volume
-- Success/failure rates
-- Average transaction size
-- Peak transaction periods
-- Payment method distribution
 
-#### 8. Get Merchant Timeline
+#### 4. Update Merchant
 ```http
-GET /api/v1/system/merchants/{merchant_id}/timeline
+PUT /api/Arinki/merchants/{merchant_id}
 ```
-Generates a chronological view of merchant activity, showing:
-- Transaction patterns over time
-- Key events and milestones
-- Volume trends
-- Risk score changes
-- Notable incidents
+
+Updates an existing merchant's information. All fields are optional except merchant_id.
+
+#### 5. Get Merchant Risk Metrics
+```http
+GET /api/Arinki/merchants/{merchant_id}/risk-metrics
+```
+
+Calculates and returns comprehensive risk metrics including:
+- Overall risk score
+- Risk factor breakdown
+- Pattern analysis
+- Historical trends
+- Velocity metrics
+
+#### 6. Get Merchant Events
+```http
+GET /api/Arinki/merchants/{merchant_id}/events
+```
+
+Retrieves filtered events for specific patterns:
+- Large amount transactions
+- High velocity patterns
+- Suspicious time patterns
+
+**Query Parameters:**
+- `event_types`: Array of event types to filter
+- `start_date`: Optional start date
+- `end_date`: Optional end date
+- `limit`: Maximum number of events to return (default: 100)
+
+#### 7. Create Transaction
+```http
+POST /api/Arinki/merchants/{merchant_id}/transactions
+```
+
+Creates a new transaction for a merchant with real-time risk analysis.
+
+**Request Body:**
+```json
+{
+    "transaction_id": "TXN123456",
+    "merchant_id": "M0001",
+    "amount": 1000.00,
+    "customer_id": "CUST123",
+    "timestamp": "2024-01-01T12:00:00",
+    "device_id": "DEV123",
+    "customer_location": "New York",
+    "payment_method": "credit_card",
+    "status": "pending",
+    "product_category": "electronics",
+    "platform": "web"
+}
+```
+
+**Response includes:**
+- Transaction details
+- Risk analysis
+- Pattern detection
+- Anomaly scores
+
+#### 8. Get Transaction History
+```http
+GET /api/Arinki/merchants/{merchant_id}/transactions
+```
+
+Retrieves transaction history with risk analysis for each transaction.
+
+**Query Parameters:**
+- `start_date`: Optional start date
+- `end_date`: Optional end date
+- `status`: Filter by transaction status
+- `limit`: Maximum number of transactions to return
+
+#### 9. Detect Anomalies
+```http
+POST /api/Arinki/merchants/{merchant_id}/detect-anomalies
+```
+
+Performs comprehensive anomaly detection on merchant transactions.
+
+**Response includes:**
+- Identified patterns
+- Risk levels
+- Anomaly details
+- Recommended actions
+
+#### 10. System-wide Anomaly Detection
+```http
+POST /api/Arinki/merchants/detect-all-anomalies
+```
+
+Performs batch anomaly detection across all merchants.
+
+**Response includes:**
+- Merchant-wise anomalies
+- System-wide patterns
+- Risk distribution
+- Batch analysis results
+
+All endpoints include:
+- Proper error handling
+- Input validation
+- Rate limiting
+- Authentication (to be implemented)
+- Comprehensive logging
 
 
 ## Testing
@@ -180,17 +224,6 @@ pip install pytest pytest-asyncio httpx
 
 # Run all tests
 pytest tests/
-```
-
-## Data Management
-
-### Generate Fresh Data
-```bash
-# Clear existing data and recreate schema
-python recreate_db.py
-
-# Generate new test data
-python data_generator.py
 ```
 
 ### Fraud Patterns Generated
@@ -225,18 +258,6 @@ Handles real-time transaction analysis and fraud detection:
 # Run model processor tests
 python test_model.py
 ```
-
-### Data Processing (`app/processing.py`)
-Manages transaction data analysis and reporting:
-```bash
-# Run data processing tests
-# Default: analyzes 5 merchants
-python test_processing.py
-
-# Analyze specific number of merchants
-python test_processing.py --limit 10
-```
-
 ### Data Models (`app/models.py`) and Schemas (`app/schemas.py`)
 Database models and data validation schemas:
 ```bash
@@ -269,11 +290,9 @@ merchant_api/
 │   ├── models.py           # SQLAlchemy models
 │   ├── schemas.py          # Pydantic schemas
 │   ├── model_processor.py  # Transaction analysis
-│   ├── processing.py       # Data processing
 │   ├── validation.py       # Input validation
 │   └── config.py           # Settings
 ├── data_generator.py        # Test data generation
-├── recreate_db.py          # Database management
 └── requirements.txt        # Dependencies
 ```
 

@@ -5,6 +5,7 @@ from merchant_api.app.models import Merchant, Transaction
 from merchant_api.app.db import SessionLocal
 import numpy as np
 from sqlalchemy import text
+from sqlalchemy.sql import func
 
 class DataGenerator:
     def __init__(self, db: Session):
@@ -30,7 +31,24 @@ class DataGenerator:
         
         print("Generating transaction data...")
         self._generate_transactions(merchants)
-
+        
+        print("Generating pattern transactions...")
+        for merchant in merchants:
+            last_tx = self.db.query(Transaction)\
+                .filter(Transaction.merchant_id == merchant.merchant_id)\
+                .order_by(Transaction.timestamp.desc())\
+                .first()
+            
+            avg_amount = self.db.query(func.avg(Transaction.amount))\
+                .filter(Transaction.merchant_id == merchant.merchant_id)\
+                .scalar() or 0
+            
+            if last_tx:
+                pattern_txs = self._generate_pattern_transactions(merchant, last_tx, avg_amount)
+                if pattern_txs:
+                    for tx in pattern_txs:
+                        self.db.merge(tx)
+                    self.db.commit()
     def _generate_merchants(self, num_merchants):
         merchants = []
         for i in range(1, num_merchants + 1):
@@ -103,28 +121,59 @@ class DataGenerator:
         if all_transactions:
             self.db.bulk_save_objects(all_transactions)
             self.db.commit()
-
+    def _create_transaction(self, merchant, start_time, end_time, base_amount, variance):
+    # """Create a single transaction with the given parameters"""
+        tx_id = f"TX{random.randint(100000, 999999)}"
+        
+        # Generate random amount within variance
+        amount = round(random.uniform(
+            base_amount - variance,
+            base_amount + variance
+        ), 2)
+        
+        # Generate random timestamp between start and end times
+        timestamp = start_time + timedelta(
+            seconds=random.randint(
+                0, 
+                int((end_time - start_time).total_seconds())
+        )
+    )
+    
+        return Transaction(
+            transaction_id=tx_id,
+            merchant_id=merchant.merchant_id,
+            amount=amount,
+            timestamp=timestamp,
+            customer_id=f"C{random.randint(1000, 9999)}",
+            device_id=f"D{random.randint(1000, 9999)}",
+            customer_location=random.choice(self.cities),
+            payment_method=random.choice(self.payment_methods),
+            status=random.choices(
+                ['success', 'failed', 'pending'],
+                weights=[0.95, 0.03, 0.02]
+            )[0],
+            product_category=random.choice(self.product_categories),
+            platform=random.choice(self.platforms)
+        )
     def _generate_pattern_transactions(self, merchant, original_tx, avg_amount):
         pattern_txs = []
-        pattern_type = random.choice(['split', 'rapid', 'round'])
+        pattern_type = random.choice(['largeamt', 'rapid', 'round'])
         
-        if pattern_type == 'split':
-            # Split into 2-4 smaller transactions
-            splits = random.randint(2, 4)
-            split_amount = original_tx.amount / splits
-            for _ in range(splits):
+        if pattern_type == 'largeamt':
+            num_transactions = random.randint(2,4)
+            large_amount = random.uniform(15000, 30000)
+            for _ in range(num_transactions):
                 tx = self._create_transaction(
                     merchant,
                     original_tx.timestamp,
                     original_tx.timestamp + timedelta(minutes=30),
-                    split_amount,
-                    split_amount * 0.1
+                    large_amount,
+                    large_amount * 0.01  # 10% variance in amount
                 )
                 pattern_txs.append(tx)
                 
         elif pattern_type == 'rapid':
-            # Generate 2-3 rapid transactions
-            for i in range(random.randint(2, 3)):
+            for i in range(random.randint(5,10)):
                 tx = self._create_transaction(
                     merchant,
                     original_tx.timestamp,
