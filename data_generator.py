@@ -53,7 +53,7 @@ class DataGenerator:
         merchants = []
         for i in range(1, num_merchants + 1):
             merchant = Merchant(
-                merchant_id=f"M{i:04d}",
+                merchant_id=f"M{i:06d}",
                 business_name=f"Business_{i}",
                 business_type=random.choice(self.business_types),
                 business_model=random.choice(self.business_models),
@@ -80,7 +80,7 @@ class DataGenerator:
             start_date = end_date - timedelta(days=14)  # 2 weeks of data
             
             # Generate base amount parameters
-            avg_amount = random.uniform(100, 1000)
+            avg_amount = random.uniform(1000, 3000)
             std_amount = avg_amount * 0.3
             
             for _ in range(num_transactions):

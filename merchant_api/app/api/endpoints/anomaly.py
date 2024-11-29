@@ -94,7 +94,10 @@ async def get_transaction_history(
                 "device_id": getattr(txn, 'device_id', "unknown"),
                 "risk_level": risk_analysis["risk_indicators"]["risk_level"],
                 "anomaly_score": risk_analysis["anomaly_score"],
-                "risk_patterns": risk_analysis["pattern_match"]
+                "risk_patterns": risk_analysis["pattern_match"],
+                "product_category": getattr(txn, 'product_category', "unknown"),
+                "customer_location": getattr(txn, 'customer_location', "unknown"),
+                "payment_method": getattr(txn, 'payment_method', "unknown")
             }
             transaction_histories.append(transaction_history)
             

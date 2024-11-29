@@ -60,11 +60,11 @@ class TransactionHistory(BaseModel):
     timestamp: datetime
     status: str
     platform: str
-    customer_id: str = "unknown"
-    device_id: str = "unknown"
-    customer_location: str = "unknown"
-    payment_method: str = "unknown"
-    product_category: str = "unknown"
+    customer_id: str
+    device_id: str 
+    customer_location: str 
+    payment_method: str 
+    product_category: str 
     # is_anomaly: bool = False
     # anomaly_reasons: Optional[str] = None
 

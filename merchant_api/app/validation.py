@@ -45,8 +45,8 @@ class MerchantValidator(BaseModel):
     state: str
     status: str = Field(..., pattern='^(active|inactive|suspended)$')
 
-    @validator('merchant_id')
-    def validate_merchant_id(cls, v):
-        if not re.match(r'^M\d+$', v):
-            raise ValueError('Merchant ID must start with M followed by numbers')
-        return v 
+    # @validator('merchant_id')
+    # def validate_merchant_id(cls, v):
+    #     if not re.match(r'^M\d+$', v):
+    #         raise ValueError('Merchant ID must start with M followed by numbers')
+    #     return v 

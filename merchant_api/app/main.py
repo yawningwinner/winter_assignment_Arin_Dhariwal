@@ -5,7 +5,7 @@ from typing import Optional, List, Dict
 from merchant_api.app.db import SessionLocal, engine
 from merchant_api.app.models import Base, Merchant, Transaction
 from merchant_api.app.validation import TransactionValidator, MerchantValidator
-from merchant_api.app.processing import DataProcessor
+# from merchant_api.app.processing import DataProcessor
 from merchant_api.app.api.endpoints import anomaly
 from merchant_api.app.cache import cache_manager
 from merchant_api.app.events import event_processor, EventType, EventPriority
