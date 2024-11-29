@@ -26,7 +26,7 @@ class ModelProcessor:
         
         # Determine patterns
         patterns = []
-        if amount_score > 0.7:
+        if amount_score ==1.0:
             patterns.append("large_amount")
         if time_score > 0.7:
             patterns.append("suspicious_time")
@@ -48,7 +48,10 @@ class ModelProcessor:
 
     def _calculate_amount_score(self, amount: float) -> float:
         """Calculate normalized score for transaction amount"""
-        return min(1.0, amount / (self.thresholds["amount"] * 1.5))
+        if(amount > 2500.0):
+            return 1.0
+        else:
+            return amount / self.thresholds["amount"]
 
     def _calculate_time_score(self, timestamp: datetime) -> float:
         """Calculate score based on transaction time"""

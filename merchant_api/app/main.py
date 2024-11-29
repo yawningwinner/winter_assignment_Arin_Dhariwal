@@ -30,7 +30,7 @@ def read_root():
     return {"message": "Welcome to Merchant Investigation API"}
 
 # Add the router with correct prefix
-app.include_router(anomaly.router, prefix="/api/v1", tags=["merchants"])
+app.include_router(anomaly.router, tags=["merchants"])
 
 # Add shutdown event to clean up resources
 @app.on_event("shutdown")

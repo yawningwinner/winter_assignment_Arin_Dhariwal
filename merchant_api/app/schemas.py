@@ -24,11 +24,17 @@ class MerchantUpdate(MerchantBase):
     state: Optional[str] = None
     status: Optional[str] = None
 
-class MerchantProfile(MerchantBase):
+class MerchantProfile(BaseModel):
     merchant_id: str
-    registration_date: datetime
-    bank_name: str
-    account_number: str
+    business_name: str
+    business_type: str
+    business_model: str
+    city: str
+    state: str
+    status: str
+    registration_date: Optional[datetime] = None
+    bank_name: Optional[str] = None
+    account_number: Optional[str] = None
 
     class Config:
         from_attributes = True
@@ -59,8 +65,8 @@ class TransactionHistory(BaseModel):
     customer_location: str = "unknown"
     payment_method: str = "unknown"
     product_category: str = "unknown"
-    is_anomaly: bool = False
-    anomaly_reasons: Optional[str] = None
+    # is_anomaly: bool = False
+    # anomaly_reasons: Optional[str] = None
 
     class Config:
         from_attributes = True
