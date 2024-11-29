@@ -297,13 +297,6 @@ merchant_api/
 ```
 
 ## Future Improvements
-
-### Performance Optimizations
-- Implement Redis caching for frequently accessed data
-- Add database query optimization and indexing
-- Implement batch processing for large datasets
-- Add connection pooling for better database performance
-
 ### Feature Enhancements
 - Real-time notification system for high-risk transactions
 - Machine learning model integration for improved fraud detection
@@ -312,8 +305,6 @@ merchant_api/
 ### Code Quality
 - Increase test coverage
 - Add integration tests
-- Implement CI/CD pipeline
-- Add API documentation generation
 - Implement automated code quality checks
 
 ### Data Management
